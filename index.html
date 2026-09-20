@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digistack - Solusi Digitalisasi Total & Sistem Kustom UMKM</title>
+
+    <!-- SEO & Social Meta -->
+    <meta name="description" content="Digistack menyediakan solusi digitalisasi total untuk UMKM: POS, Chatbot WhatsApp, Finance, Stock Management, CRM, hingga sistem kustom sekali bayar tanpa langganan.">
+    <meta name="keywords" content="digitalisasi UMKM, sistem POS, kasir digital, chatbot whatsapp, software custom, sistem multi-outlet">
+    <meta name="author" content="Digistack">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Digistack - Solusi Digitalisasi Total & Sistem Kustom UMKM">
+    <meta property="og:description" content="Otomatisasi POS, Finance, Stock, CRM, dan lainnya untuk UMKM. Sekali bayar, tanpa biaya langganan bulanan.">
+    <meta property="og:locale" content="id_ID">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Digistack - Solusi Digitalisasi Total & Sistem Kustom UMKM">
+    <meta name="twitter:description" content="Otomatisasi POS, Finance, Stock, CRM, dan lainnya untuk UMKM. Sekali bayar, tanpa biaya langganan bulanan.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cpath d='M15 25 L40 10 L65 25' stroke='%230284c7' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15 50 L40 35 L65 50' stroke='%230284c7' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15 75 L40 60 L65 75' stroke='%230284c7' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           RESET & VARIABLE STYLES
+           ========================================================================== */
+        :root {
+            --primary: #0284c7;          /* Moka Blue */
+            --primary-dark: #0369a1;
+            --secondary: #0f172a;        /* Deep Slate Navy */
+            --accent: #10b981;           /* Emerald Green */
+            --bg-light: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ==========================================================================
+           NAVBAR (BLUE THEME + ADDONS DROPDOWN MENU)
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(3, 105, 161, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            text-decoration: none;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand-title {
+            font-weight: 800;
+            font-size: 1.45rem;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .brand-title span {
+            color: #38bdf8;
+        }
+
+        .brand-tagline {
+            font-weight: 700;
+            font-size: 0.55rem;
+            color: #bae6fd;
+            letter-spacing: 1.5px;
+            margin-top: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        /* HAMBURGER TOGGLE (MOBILE ONLY) */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 0.4rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #f0f9ff;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* STYLES DROPDOWN MENU ADDONS */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #ffffff;
+            min-width: 240px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            padding: 0.6rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            list-style: none;
+            border: 1px solid #e2e8f0;
+            z-index: 1100;
+        }
+
+        .nav-links li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li a {
+            color: var(--text-main);
+            padding: 0.65rem 1.2rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .dropdown-menu li a i {
+            color: var(--primary);
+            width: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-menu li a:hover {
+            background: #f0f9ff;
+            color: var(--primary);
+        }
+
+        /* ==========================================================================
+           HERO BANNER (FULL BLUE GRADIENT) & AUTO-SWITCH SLIDER STYLES
+           ========================================================================== */
+        .hero-banner {
+            position: relative;
+            padding: 11rem 2rem 6rem;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 40%, #0f172a 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: "";
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(2, 132, 199, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* CONTAINER SLIDER HERO TEXT */
+        .hero-slider-wrapper {
+            position: relative;
+            min-height: 250px;
+            margin-bottom: 1.5rem;
+            transition: height 0.4s ease;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            transform: translateY(15px);
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            line-height: 1.25;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title span {
+            color: #facc15;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: #f0f9ff;
+            line-height: 1.7;
+        }
+
+        /* BULLET DOTS INDICATOR */
+        .hero-dots {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .dot-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot-indicator.active {
+            width: 28px;
+            border-radius: 6px;
+            background: #facc15;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cyan {
+            background-color: #00aeef;
+            color: #ffffff;
+            padding: 0.95rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(0, 174, 239, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-cyan:hover {
+            background-color: #0093c9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 174, 239, 0.6);
+        }
+
+        .btn-demo-pill {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1.5px solid #10b981;
+            color: #ffffff;
+            padding: 0.95rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-demo-pill:hover {
+            background-color: #10b981;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        /* BG TABLET POS MOCKUP FRAME */
+        .hero-visual {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .tablet-pos-frame {
+            background: #1e293b;
+            border-radius: 28px;
+            padding: 16px;
+            box-shadow: -15px 25px 50px rgba(0, 0, 0, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.15);
+            transform: rotateY(-8deg) rotateX(4deg);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .tablet-pos-frame:hover {
+            transform: rotateY(0deg) rotateX(0deg);
+        }
+
+        .tablet-camera {
+            width: 8px;
+            height: 8px;
+            background: #334155;
+            border-radius: 50%;
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .mockup-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 18px;
+            padding: 1.5rem 1.2rem;
+            color: var(--text-main);
+            overflow: hidden;
+        }
+
+        .mockup-header {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+
+        .mockup-content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.65rem;
+            max-height: 440px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        .mockup-content-grid::-webkit-scrollbar { width: 4px; }
+        .mockup-content-grid::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .stat-box {
+            background: var(--bg-light);
+            padding: 0.75rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .stat-box:hover {
+            background: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .stat-icon {
+            width: 34px;
+            height: 34px;
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .stat-tag { font-size: 0.65rem; color: var(--text-muted); font-weight: 600; }
+        .stat-title { font-size: 0.8rem; color: var(--secondary); font-weight: 700; display: block; line-height: 1.2; }
+
+        /* ==========================================================================
+           KENAPA HARUS DIGISTACK?
+           ========================================================================== */
+        .why-digistack-section {
+            padding: 5rem 2rem;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .why-digistack-container {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .brand-text-styled {
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-text-styled span {
+            color: #0284c7;
+        }
+
+        .why-digistack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .positioning-banner {
+            margin-top: 2.5rem;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border-radius: var(--radius);
+            padding: 2rem 2.4rem;
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            color: #ffffff;
+            box-shadow: 0 20px 40px rgba(2, 132, 199, 0.2);
+        }
+
+        .positioning-icon {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .positioning-en {
+            font-size: 1.25rem;
+            font-weight: 800;
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: 0.4rem;
+        }
+
+        .positioning-id {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 700px) {
+            .positioning-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.8rem 1.5rem;
+            }
+        }
+
+        .why-item {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 2rem 1.6rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .why-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+            background: #ffffff;
+        }
+
+        .why-badge-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(2, 132, 199, 0.1);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .why-title-item {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.6rem;
+        }
+
+        .why-desc-item {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           LAYANAN UTAMA (SUPER COMPACT MINI-GRID)
+           ========================================================================== */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            font-weight: 800;
+            margin-top: 0.5rem;
+        }
+
+        .services-grid-ultra-compact {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 0.85rem;
+        }
+
+        /* ==========================================================================
+           ALUR KERJA / CARA KERJA PESAN WEBSITE
+           ========================================================================== */
+        .flow-section {
+            background: #f1f5f9;
+        }
+
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .flow-step {
+            text-align: center;
+            padding: 0 0.5rem;
+        }
+
+        .flow-number {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            background: var(--secondary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .flow-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 992px) {
+            .flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .flow-grid {
+                grid-template-columns: 1fr;
+                gap: 2.2rem;
+            }
+        }
+
+        .service-card-mini {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem 0.85rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .service-card-mini:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px -4px rgba(2, 132, 199, 0.12);
+            border-color: var(--primary);
+        }
+
+        .service-icon-mini {
+            width: 36px;
+            height: 36px;
+            color: #ffffff;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            margin-bottom: 0.65rem;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .service-card-mini:hover .service-icon-mini {
+            transform: scale(1.08);
+        }
+
+        .service-title-mini {
+            font-size: 0.88rem;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+            line-height: 1.25;
+        }
+
+        .service-desc-mini {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            line-height: 1.45;
+        }
+
+        /* Warna Gradient Ikon Mini */
+        .bg-blue { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
+        .bg-green { background: linear-gradient(135deg, #25d366 0%, #16a34a 100%); }
+        .bg-cyan { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
+        .bg-emerald { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .bg-indigo { background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); }
+        .bg-purple { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); }
+        .bg-amber { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .bg-red { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+        .bg-sky { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
+        .bg-pink { background: linear-gradient(135deg, #ec4899 0%, #db2777 100%); }
+        .bg-teal { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); }
+        .bg-orange { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); }
+        .bg-slate { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .bg-brown { background: linear-gradient(135deg, #92400e 0%, #78350f 100%); }
+
+        /* Kartu layanan non-software (jasa konsultan manusia, bukan modul sistem) */
+        .service-card-mini { position: relative; }
+
+        .service-badge-consult {
+            position: absolute;
+            top: 0.7rem;
+            right: 0.7rem;
+            font-size: 0.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            background: rgba(2, 132, 199, 0.1);
+            padding: 0.15rem 0.5rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        /* ==========================================================================
+           TRANSFORMASI OPERASIONAL
+           ========================================================================== */
+        .why-us {
+            position: relative;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 24px;
+            padding: 5rem 3.5rem;
+            margin: 4rem auto;
+            max-width: 1200px;
+            box-shadow: 0 20px 40px rgba(2, 132, 199, 0.25);
+            overflow: hidden;
+        }
+
+        .why-us-bg-logo {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            opacity: 0.18;
+            pointer-events: none;
+            z-index: 0;
+            transition: var(--transition);
+        }
+
+        .why-us:hover .why-us-bg-logo {
+            opacity: 0.25;
+            transform: scale(1.03);
+        }
+
+        .why-us-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 1.8rem;
+            border-radius: 16px;
+            backdrop-filter: blur(8px);
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .why-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.61rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .why-card h4 i { 
+            color: #10b981; 
+            font-size: 1.1rem;
+            background: #ffffff;
+            border-radius: 50%;
+            padding: 2px;
+        }
+
+        .why-card p { 
+            color: #e0f2fe; 
+            font-size: 0.95rem; 
+            line-height: 1.65; 
+        }
+
+        /* ==========================================================================
+           PRICING SECTION (SEKARANG SUDAH DITAMBAHKAN MODERN UI/UX, COM PRO & DOMAIN HOSTING DI CUSTOM)
+           ========================================================================== */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover { box-shadow: var(--shadow); transform: translateY(-5px); }
+        .pricing-card.popular { border: 2px solid var(--primary); box-shadow: var(--shadow); }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+
+        .pricing-header h3 { font-size: 1.3rem; color: var(--secondary); font-weight: 700; }
+        .pricing-header p { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.4rem; }
+
+        .pricing-price { margin: 1.8rem 0 0.8rem; display: flex; align-items: baseline; gap: 0.3rem; }
+        .pricing-price .currency { font-size: 1.1rem; font-weight: 700; color: var(--secondary); }
+        .pricing-price .amount { font-size: 2.3rem; font-weight: 800; color: var(--secondary); letter-spacing: -1px; }
+        .pricing-price .period { font-size: 0.85rem; color: var(--text-muted); white-space: nowrap; }
+
+        .tax-inclusive-badge {
+            font-size: 0.78rem;
+            color: #0284c7;
+            background: rgba(2, 132, 199, 0.08);
+            border: 1px solid rgba(2, 132, 199, 0.2);
+            padding: 0.35rem 0.65rem;
+            border-radius: 6px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .pricing-features li { font-size: 0.92rem; color: var(--text-main); display: flex; align-items: flex-start; gap: 0.6rem; }
+        .pricing-features li i { color: var(--accent); font-size: 0.9rem; margin-top: 3px; }
+
+        .pricing-footer-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .btn-card { padding: 0.85rem 1.5rem; border-radius: 8px; font-weight: 700; text-align: center; transition: var(--transition); border: none; background: none; cursor: pointer; font-size: inherit; width: 100%; display: block; }
+        .btn-card-primary { background: var(--primary); color: white; }
+        .btn-card-primary:hover { background: var(--primary-dark); }
+        .btn-card-outline { border: 1px solid var(--border-color); color: var(--secondary); }
+        .btn-card-outline:hover { background: var(--bg-light); }
+        
+        .btn-card-demo {
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
+            border: 1px solid #10b981;
+        }
+        .btn-card-demo:hover {
+            background: #10b981;
+            color: white;
+        }
+
+        /* ==========================================================================
+           BIAYA TAMBAHAN & MAINTENANCE LANJUTAN
+           ========================================================================== */
+        .fee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .fee-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 2rem 1.8rem;
+            transition: var(--transition);
+        }
+
+        .fee-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-4px);
+        }
+
+        .fee-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.5rem; }
+        .fee-card .fee-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.6rem; line-height: 1.6; }
+
+        .fee-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+        .fee-list li {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem;
+            font-size: 0.95rem; color: var(--text-main);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 0.9rem;
+        }
+        .fee-list li strong { color: var(--secondary); font-weight: 800; }
+        .fee-list li.highlight { color: var(--primary); }
+        .fee-list li.highlight strong { color: var(--primary); }
+        .fee-badge {
+            font-size: 0.68rem; font-weight: 800; color: #fff; background: var(--accent);
+            padding: 0.2rem 0.6rem; border-radius: 50px; text-transform: uppercase;
+        }
+
+        /* ==========================================================================
+           PORTOFOLIO
+           ========================================================================== */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .portfolio-card:hover { box-shadow: var(--shadow); }
+        .portfolio-img { width: 100%; height: 200px; background-color: #cbd5e1; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: 600; }
+        .portfolio-body { padding: 1.8rem; }
+        .portfolio-tag { font-size: 0.75rem; font-weight: 700; color: var(--primary); background: rgba(2, 132, 199, 0.1); padding: 0.2rem 0.6rem; border-radius: 4px; text-transform: uppercase; }
+        .portfolio-title { font-size: 1.2rem; font-weight: 700; color: var(--secondary); margin: 0.8rem 0 0.5rem; }
+        .portfolio-desc { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* Cover Flow — carousel gambar untuk card portofolio pertama */
+        .coverflow {
+            position: relative;
+            width: 100%;
+            height: 340px;
+            background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+            overflow: hidden;
+        }
+
+        .coverflow-stage {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            perspective: 1200px;
+        }
+
+        .coverflow-item {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 320px;
+            height: 185px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            cursor: pointer;
+        }
+
+        .coverflow-item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 8px;
+            border: 3px solid #fff;
+            box-shadow: 0 14px 28px rgba(15, 23, 42, 0.3);
+        }
+
+        .coverflow-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+            z-index: 30;
+            transition: var(--transition);
+        }
+
+        .coverflow-nav:hover { background: #fff; }
+        .coverflow-prev { left: 8px; }
+        .coverflow-next { right: 8px; }
+
+        .coverflow-dots {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 30;
+        }
+
+        .coverflow-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.55);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .coverflow-dot.active { width: 16px; border-radius: 3px; background: #fff; }
+
+        /* ==========================================================================
+           CTA BANNER
+           ========================================================================== */
+        .cta-banner-wrapper {
+            max-width: 1200px;
+            margin: 4rem auto 6rem;
+            padding: 0 2rem;
+        }
+
+        .cta-banner-moka {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border-radius: 24px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(2, 132, 199, 0.2);
+        }
+
+        .cta-content {
+            padding: 4.5rem 3.5rem;
+            color: #ffffff;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            line-height: 1.25;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-desc {
+            font-size: 1.05rem;
+            color: #e0f2fe;
+            margin-bottom: 2rem;
+            max-width: 480px;
+            line-height: 1.6;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-hardware-box {
+            position: relative;
+            height: 100%;
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .pos-hardware-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            width: 100%;
+            max-width: 380px;
+            transform: rotate(-3deg);
+            transition: var(--transition);
+        }
+
+        .pos-hardware-card:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .hardware-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .hardware-icon {
+            width: 45px;
+            height: 45px;
+            background: #0284c7;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .hardware-info h4 {
+            font-size: 0.98rem;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .hardware-info p {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* FLOATING WHATSAPP BUTTON */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ==========================================================================
+           POPUP FORM PAKET (LEAD CAPTURE)
+           ========================================================================== */
+        .paket-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .paket-modal-overlay.active { display: flex; }
+
+        .paket-modal-box {
+            background: var(--surface);
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 460px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2.2rem 2rem;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .paket-modal-close {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: none;
+            background: var(--bg-light);
+            color: var(--text-muted);
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .paket-modal-close:hover { background: var(--border-color); color: var(--secondary); }
+
+        .paket-modal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(2, 132, 199, 0.08);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .paket-modal-box h3 { font-size: 1.4rem; font-weight: 800; color: var(--secondary); margin-bottom: 0.4rem; }
+        .paket-modal-box p.paket-modal-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.6rem; line-height: 1.6; }
+
+        .paket-form-group { margin-bottom: 1.1rem; }
+        .paket-form-group label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.4rem; }
+        .paket-form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.92rem;
+            font-family: inherit;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+        .paket-form-group input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12); }
+        .paket-form-group input[readonly] { background: var(--bg-light); color: var(--primary); font-weight: 700; cursor: not-allowed; }
+
+        .paket-form-submit {
+            width: 100%;
+            padding: 0.9rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 0.4rem;
+        }
+        .paket-form-submit:hover { background: var(--primary-dark); }
+        .paket-form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .paket-form-note { font-size: 0.74rem; color: var(--text-muted); text-align: center; margin-top: 0.9rem; line-height: 1.5; }
+
+        .paket-form-status {
+            display: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.1rem;
+        }
+        .paket-form-status.show { display: block; }
+        .paket-form-status.success { background: rgba(16, 185, 129, 0.1); color: #059669; }
+        .paket-form-status.error { background: rgba(239, 68, 68, 0.1); color: #dc2626; }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            background: var(--surface);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Cegah grid item melebar melebihi track-nya (default min-width:auto pada grid item
+           bisa memaksa overflow horizontal di layar sempit ketika kontennya panjang). */
+        .hero-container > *, .mockup-content-grid > *, .why-digistack-grid > *,
+        .services-grid-ultra-compact > *, .flow-grid > *, .why-us-grid > *,
+        .pricing-grid > *, .fee-grid > *, .portfolio-grid > *, .cta-banner-moka > * {
+            min-width: 0;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-title { font-size: 2.1rem; }
+            .hero-desc { margin: 0 auto 2.2rem; }
+            .hero-actions { justify-content: center; }
+            .hero-dots { justify-content: center; }
+            .section-title { font-size: 1.7rem; }
+
+            /* MOBILE NAV: HAMBURGER + COLLAPSIBLE PANEL */
+            .nav-toggle { display: block; }
+            .nav-container { padding: 0.8rem 1.2rem; gap: 0.6rem; }
+            .nav-cta { padding: 0.6rem 0.8rem !important; flex-shrink: 0; }
+            .nav-cta-label { display: none; }
+            .brand-tagline { display: none; }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                background: #0369a1;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.35s ease;
+            }
+
+            .nav-links.active {
+                max-height: 80vh;
+                overflow-y: auto;
+                padding-bottom: 1rem;
+            }
+
+            .nav-links > li { width: 100%; }
+
+            .nav-links > li > a {
+                padding: 0.9rem 2rem;
+                justify-content: space-between;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            /* DROPDOWN JADI ACCORDION DI MOBILE (TAP, BUKAN HOVER) */
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                background: rgba(255, 255, 255, 0.06);
+                min-width: 0;
+                max-height: 0;
+                padding: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .nav-links li.dropdown-open .dropdown-menu {
+                max-height: 500px;
+                padding: 0.4rem 0;
+            }
+
+            .dropdown-menu li a {
+                color: #f0f9ff;
+                padding: 0.7rem 2.5rem;
+            }
+
+            .dropdown-menu li a i { color: #38bdf8; }
+
+            .dropdown-menu li a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                color: #ffffff;
+            }
+
+            .mockup-content-grid { grid-template-columns: 1fr; }
+            .tablet-pos-frame { transform: none; }
+
+            .cta-banner-moka {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .cta-content { padding: 3rem 2rem 2rem; }
+            .cta-desc { margin: 0 auto 2rem; }
+            .cta-actions { justify-content: center; }
+            .cta-hardware-box { min-height: 280px; }
+            .pos-hardware-card { transform: none; }
+            
+            .why-us-bg-logo {
+                width: 120px;
+                height: 120px;
+                top: 10px;
+                left: 10px;
+            }
+
+            /* Beri ruang bawah supaya tombol WhatsApp mengambang tidak menimpa teks footer */
+            footer { padding-bottom: 6.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <!-- LOGO DIGISTACK -->
+            <a href="#" class="brand-logo">
+                <svg width="45" height="45" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 15 25 L 40 10 L 65 25" stroke="#38BDF8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 15 50 L 40 35 L 65 50" stroke="#60A5FA" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 15 75 L 40 60 L 65 75" stroke="#93C5FD" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="73" cy="10" r="5" fill="#10B981"/>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-title">DIGI<span>STACK</span></span>
+                    <span class="brand-tagline">SCALE UP YOUR BUSINESS</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#kenapa">Keunggulan</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#keunggulan">Solusi</a></li>
+                <li><a href="#harga">Harga Paket</a></li>
+
+                <!-- MENU DROPDOWN BISNIS -->
+                <li>
+                    <a href="#bisnis">Bisnis <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20untuk%20bisnis%20Cafe" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-mug-hot"></i> Cafe</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20untuk%20bisnis%20Resto" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-utensils"></i> Resto</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20untuk%20bisnis%20Retail" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-store"></i> Retail</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20untuk%20bisnis%20Laundry" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-soap"></i> Laundry</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20untuk%20bisnis%20Grocery%20Store" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-basket-shopping"></i> Grocery Store</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20untuk%20bisnis%20Manufacture" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-industry"></i> Manufacture</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20untuk%20Multi-Outlet%20Business" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-sitemap"></i> Multi-Outlet Business</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20untuk%20bisnis%20Fashion" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-shirt"></i> Fashion</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20untuk%20Online%20Store" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-cart-shopping"></i> Online Store</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20Custom%20lainnya" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-ellipsis"></i> Others (Custom)</a></li>
+                    </ul>
+                </li>
+
+                <!-- MENU DROPDOWN ADDONS -->
+                <li>
+                    <a href="#addons">Addons <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20PC%20Kasir" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-desktop"></i> PC / Komputer Kasir</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20Tablet%20POS" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-tablet-screen-button"></i> Tablet POS</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20Printer%20Thermal" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-print"></i> Printer Thermal</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20Cash%20Drawer" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-box-archive"></i> Cash Drawer (Laci Kasir)</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20UPS" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-plug-circle-bolt"></i> UPS (Power Backup)</a></li>
+                        <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20Barcode%20Scanner" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-barcode"></i> Scanner Barang</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#portofolio">Portofolio</a></li>
+            </ul>
+            <a href="https://wa.me/6285730700286" target="_blank" rel="noopener noreferrer" class="btn-cyan nav-cta" style="padding: 0.65rem 1.4rem;">
+                <i class="fa-brands fa-whatsapp"></i> <span class="nav-cta-label">Diskusi Sistem</span>
+            </a>
+
+            <!-- HAMBURGER TOGGLE (MOBILE) -->
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION DENGAN 4 HERO TEXT AUTO-SWITCH & DETENT 30 DETIK SAAT KLIK DOT -->
+    <section class="hero-banner">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-tag"><i class="fa-solid fa-chart-line"></i> Digitalisasi Total UMKM</span>
+                
+                <!-- CONTAINER SLIDER HERO TEXT (4 SLIDES) -->
+                <div class="hero-slider-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="hero-slide active" data-index="0">
+                        <h1 class="hero-title">Saatnya Bisnis Naik Kelas Dengan <span>Otomatisasi Sistem Custom</span></h1>
+                        <p class="hero-desc">
+                            Solusi digitalisasi <em>end-to-end</em> dari Digistack: merapikan alur kerja dari <em>frontend</em> hingga <em>backend</em>, memangkas proses manual, dan otomatiskan operasional usaha Anda.
+                        </p>
+                    </div>
+
+                    <!-- Slide 2: Narasi Tanpa Langganan -->
+                    <div class="hero-slide" data-index="1">
+                        <h1 class="hero-title">Bosan Bayar <span>Langganan Aplikasi</span>?</h1>
+                        <p class="hero-desc">
+                            Digistack hadir sebagai solusi <em>one-time payment</em> tanpa biaya berlangganan bulanan. Software yang sudah dibeli menjadi hak milik klien sepenuhnya.
+                        </p>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="hero-slide" data-index="2">
+                        <h1 class="hero-title">Pantau Omzet & Laporan <span>Multi-Cabang Real-Time</span></h1>
+                        <p class="hero-desc">
+                            Kelola banyak outlet dan pantau keuangan bisnis secara terpusat langsung dari genggaman Anda tanpa repot rekap manual setiap hari.
+                        </p>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="hero-slide" data-index="3">
+                        <h1 class="hero-title">Bebas Pusing Server & <span>Gratis Domain 1 Tahun</span></h1>
+                        <p class="hero-desc">
+                            Semua urusan server, database, dan hosting aman dikelola tim kami. Bisnis Anda siap online dengan fasilitas lengkap sekali bayar tanpa biaya tersembunyi.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BULLETIN DOTS INDICATOR (4 DOTS) -->
+                <div class="hero-dots">
+                    <button class="dot-indicator active" onclick="currentSlide(0)"></button>
+                    <button class="dot-indicator" onclick="currentSlide(1)"></button>
+                    <button class="dot-indicator" onclick="currentSlide(2)"></button>
+                    <button class="dot-indicator" onclick="currentSlide(3)"></button>
+                </div>
+
+                <!-- SINGLE BUTTON (KONSULTASI & LIVE DEMO GRATIS) -->
+                <div class="hero-actions">
+                    <a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20ingin%20konsultasi%20gratis%20sistem" target="_blank" rel="noopener noreferrer" class="btn-cyan">
+                        <i class="fa-solid fa-play"></i> Konsultasi & Live Demo Gratis
+                    </a>
+                </div>
+            </div>
+            
+            <!-- BINGKAI TABLET POS HARDWARE -->
+            <div class="hero-visual">
+                <div class="tablet-pos-frame">
+                    <div class="tablet-camera"></div>
+                    <div class="mockup-card">
+                        <div class="mockup-header">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                            <span style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); margin-left: auto;">Digistack Ecosystem POS</span>
+                        </div>
+                        
+                        <div class="mockup-content-grid">
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#2563eb;"><i class="fa-solid fa-building"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Profil Bisnis</h4>
+                                    <strong class="stat-title">Company Profile Web</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#25d366;"><i class="fa-brands fa-whatsapp"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Otomatisasi Pesan</h4>
+                                    <strong class="stat-title">Chatbot WhatsApp Auto</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#0284c7;"><i class="fa-solid fa-cash-register"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Kasir Penjualan</h4>
+                                    <strong class="stat-title">Point of Sale (POS)</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#10b981;"><i class="fa-solid fa-calculator"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Sistem Keuangan</h4>
+                                    <strong class="stat-title">Finance Accounting</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#6366f1;"><i class="fa-solid fa-gears"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Otomatisasi Kerja</h4>
+                                    <strong class="stat-title">SOP Automation</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#8b5cf6;"><i class="fa-solid fa-tower-observation"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Kontrol Jarak Jauh</h4>
+                                    <strong class="stat-title">Remote Controlling</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#f59e0b;"><i class="fa-solid fa-store"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Manajemen Cabang</h4>
+                                    <strong class="stat-title">Multi-Outlet System</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#ef4444;"><i class="fa-solid fa-boxes-stacked"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Kontrol Persediaan</h4>
+                                    <strong class="stat-title">Stock Management</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#06b6d4;"><i class="fa-solid fa-clipboard-check"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Audit Otomatis</h4>
+                                    <strong class="stat-title">Internal Audit Auto</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#ec4899;"><i class="fa-solid fa-id-card-clip"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Kelola SDM & Gaji</h4>
+                                    <strong class="stat-title">HRIS (Presensi/Gaji)</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#14b8a6;"><i class="fa-solid fa-users-gear"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Manajemen Klien</h4>
+                                    <strong class="stat-title">CRM System</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#ea580c;"><i class="fa-solid fa-credit-card"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Gerbang Pembayaran</h4>
+                                    <strong class="stat-title">Payment Gateway</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon" style="background:#d97706;"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                                <div>
+                                    <h4 class="stat-tag">Manajemen Suplai</h4>
+                                    <strong class="stat-title">Supplies & Procurement</strong>
+                                </div>
+                            </div>
+
+                            <div class="stat-box" style="border-color: #0284c7; background: #f0f9ff;">
+                                <div class="stat-icon" style="background:#0f172a;"><i class="fa-solid fa-chart-line"></i></div>
+                                <div>
+                                    <h4 class="stat-tag" style="color:#0284c7;">Laporan Owner</h4>
+                                    <strong class="stat-title">Executive Report</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KENAPA HARUS DIGISTACK? -->
+    <section class="why-digistack-section" id="kenapa">
+        <div class="why-digistack-container">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <h2 class="section-title">Kenapa Harus <span class="brand-text-styled">DIGI<span>STACK</span></span>?</h2>
+            </div>
+            <div class="why-digistack-grid">
+                <div class="why-item">
+                    <div class="why-badge-icon">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="why-title-item">100% Kustom & Fleksibel</h3>
+                    <p class="why-desc-item">Tidak ada sistem kaku. Setiap modul dikembangkan menyesuaikan alur kerja dan logika bisnis operasional Anda. <span style="font-size: 0.78rem; color: var(--text-muted);">*S&K berlaku</span></p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-badge-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <h3 class="why-title-item">Integrasi End-to-End</h3>
+                    <p class="why-desc-item">Menghubungkan lini depan penjualan (POS, Chatbot WA, Web) langsung ke persediaan gudang dan keuangan secara otomatis.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-badge-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="why-title-item">Investasi Hemat & Efisien</h3>
+                    <p class="why-desc-item">Sekali bayar tanpa biaya berlangganan tersembunyi. Dapatkan kepemilikan sistem yang siap berkembang seiring skala usaha Anda.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-badge-icon" style="background: rgba(99, 102, 241, 0.1); color: #6366f1;">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="why-title-item">Dukungan & Maintenance</h3>
+                    <p class="why-desc-item">Tim teknis siap mendampingi proses implementasi, pelatihan tim, dan garansi pemeliharaan sistem secara berkala.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-badge-icon" style="background: rgba(6, 182, 212, 0.1); color: #06b6d4;">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="why-title-item">Infrastruktur Siap Pakai, Gratis Sepenuhnya</h3>
+                    <p class="why-desc-item">Server, database, domain, hingga hosting sudah kami siapkan penuh — aman, stabil, dan gratis di tahun pertama. Anda tinggal fokus jualan, urusan teknis biar kami yang pusingkan.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-badge-icon" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h3 class="why-title-item">Kami Sesuaikan dengan Budget Anda</h3>
+                    <p class="why-desc-item">Sistem 100% custom, fitur dan biaya bisa diatur mengikuti budget Anda. Mulai dari kebutuhan paling esensial, lalu kembangkan bertahap sesuai kebutuhan. <span style="font-size: 0.78rem; color: var(--text-muted);">*S&K berlaku</span></p>
+                </div>
+            </div>
+
+            <div class="positioning-banner">
+                <span class="positioning-icon"><i class="fa-solid fa-quote-left"></i></span>
+                <div>
+                    <p class="positioning-en">"Not just software, but your strategic tech-partner to scale up."</p>
+                    <p class="positioning-id">Bukan sekadar penyedia software, melainkan mitra teknologi strategis untuk tumbuh dan naik kelas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN UTAMA -->
+    <section class="section" id="layanan">
+        <div class="section-header">
+            <span class="section-subtitle">Layanan Utama</span>
+            <h2 class="section-title">Ekosistem Digital Lengkap Sesuai Kebutuhan Usaha Anda</h2>
+        </div>
+        
+        <div class="services-grid-ultra-compact">
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-slate"><i class="fa-solid fa-chart-line"></i></div>
+                <h3 class="service-title-mini">Executive Report & Analytics</h3>
+                <p class="service-desc-mini">Pantau omzet, profit & performa bisnis otomatis.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-blue"><i class="fa-solid fa-building"></i></div>
+                <h3 class="service-title-mini">Company Profile Web</h3>
+                <p class="service-desc-mini">Website profesional untuk kredibilitas brand Anda.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-cyan"><i class="fa-solid fa-cash-register"></i></div>
+                <h3 class="service-title-mini">Point of Sale (POS)</h3>
+                <p class="service-desc-mini">Kasir digital web/mobile & cetak struk cepat.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-green"><i class="fa-brands fa-whatsapp"></i></div>
+                <h3 class="service-title-mini">Chatbot WhatsApp Auto</h3>
+                <p class="service-desc-mini">Otomatisasi pesan & orderan masuk ke gudang.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-emerald"><i class="fa-solid fa-calculator"></i></div>
+                <h3 class="service-title-mini">Finance & Accounting</h3>
+                <p class="service-desc-mini">Arus kas & pembukuan keuangan otomatis.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-indigo"><i class="fa-solid fa-gears"></i></div>
+                <h3 class="service-title-mini">SOP Automation</h3>
+                <p class="service-desc-mini">Standardisasi alur operasional tim harian.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-purple"><i class="fa-solid fa-tower-observation"></i></div>
+                <h3 class="service-title-mini">Remote Controlling</h3>
+                <p class="service-desc-mini">Kontrol aktivitas outlet dari mana saja.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-amber"><i class="fa-solid fa-store"></i></div>
+                <h3 class="service-title-mini">Multi-Outlet System</h3>
+                <p class="service-desc-mini">Kelola banyak cabang & stok terpusat.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-red"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <h3 class="service-title-mini">Stock Management</h3>
+                <p class="service-desc-mini">Kontrol persediaan & riwayat opnam stok.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-sky"><i class="fa-solid fa-clipboard-check"></i></div>
+                <h3 class="service-title-mini">Internal Audit Auto</h3>
+                <p class="service-desc-mini">Sistem deteksi otomatis selisih stok & transaksi.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-pink"><i class="fa-solid fa-id-card-clip"></i></div>
+                <h3 class="service-title-mini">HRIS (Presensi & Gaji)</h3>
+                <p class="service-desc-mini">Presensi online, izin, hingga penggajian.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-teal"><i class="fa-solid fa-users-gear"></i></div>
+                <h3 class="service-title-mini">CRM System</h3>
+                <p class="service-desc-mini">Manajemen basis pelanggan & repeat order.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-orange"><i class="fa-solid fa-credit-card"></i></div>
+                <h3 class="service-title-mini">Payment Gateway</h3>
+                <p class="service-desc-mini">Terima QRIS, Bank, & E-Wallet otomatis.</p>
+            </div>
+            <div class="service-card-mini">
+                <div class="service-icon-mini bg-amber"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                <h3 class="service-title-mini">Supplies & Procurement</h3>
+                <p class="service-desc-mini">Kelola bahan baku & belanja supplier.</p>
+            </div>
+            <div class="service-card-mini">
+                <span class="service-badge-consult">Konsultasi</span>
+                <div class="service-icon-mini bg-brown"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                <h3 class="service-title-mini">Tax Planner</h3>
+                <p class="service-desc-mini">Konsultasi & perencanaan pajak bisnis bersama ahli kami.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSFORMASI OPERASIONAL -->
+    <div class="why-us" id="keunggulan">
+        <svg class="why-us-bg-logo" width="180" height="180" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 15 25 L 40 10 L 65 25" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 15 50 L 40 35 L 65 50" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 15 75 L 40 60 L 65 75" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="73" cy="10" r="5" fill="#10B981"/>
+        </svg>
+
+        <div class="why-us-header">
+            <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color:#ffffff;">Fokus Pertumbuhan, Pantau Bisnis dari Genggaman</h2>
+        </div>
+
+        <div class="why-us-grid">
+            <div class="why-card">
+                <h4><i class="fa-solid fa-check"></i> Bebas Kerja Manual</h4>
+                <p>Mengeliminasi human error dan proses rekap ulang laporan harian yang menguras waktu dan tenaga tim Anda.</p>
+            </div>
+            <div class="why-card">
+                <h4><i class="fa-solid fa-check"></i> Siap untuk Scale Up</h4>
+                <p>Arsitektur software kokoh yang siap menangani lonjakan ribuan transaksi harian tanpa membuat sistem terhenti.</p>
+            </div>
+            <div class="why-card">
+                <h4><i class="fa-solid fa-check"></i> Fleksibel & Terukur</h4>
+                <p>Fitur dikembangkan secara bertahap sesuai skala pertumbuhan usaha Anda sehingga investasi tetap efisien.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALUR KERJA / CARA KERJA PESAN WEBSITE -->
+    <section class="section flow-section" id="alur-kerja">
+        <div class="section-header">
+            <h2 class="section-title">Alur Order</h2>
+        </div>
+        <div class="flow-grid">
+            <div class="flow-step">
+                <div class="flow-number">1</div>
+                <h3 class="flow-title">Konsultasi</h3>
+                <p class="flow-desc">Diskusikan kebutuhan bisnis Anda lewat WhatsApp. <strong>Gratis, belum perlu bayar apa pun.</strong></p>
+            </div>
+            <div class="flow-step">
+                <div class="flow-number">2</div>
+                <h3 class="flow-title">Order</h3>
+                <p class="flow-desc">Setelah cocok, kami langsung mulai kerjakan apps web Anda.</p>
+            </div>
+            <div class="flow-step">
+                <div class="flow-number">3</div>
+                <h3 class="flow-title">Cek & Revisi</h3>
+                <p class="flow-desc">Lihat hasilnya, minta perubahan sampai cocok dengan kebutuhan Anda. <span style="font-size: 0.78rem;">*Custom Package</span></p>
+            </div>
+            <div class="flow-step">
+                <div class="flow-number">4</div>
+                <h3 class="flow-title">Bayar</h3>
+                <p class="flow-desc">Bayar setelah review final.</p>
+            </div>
+            <div class="flow-step">
+                <div class="flow-number">5</div>
+                <h3 class="flow-title">Live</h3>
+                <p class="flow-desc">Apps web langsung online dan siap dipakai bisnis Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION (UPDATE PAKET CUSTOM TERBARU) -->
+    <section class="section" id="harga">
+        <div class="section-header">
+            <span class="section-subtitle">Investasi Efisien</span>
+            <h2 class="section-title">Pilihan Paket Digitalisasi UMKM</h2>
+        </div>
+        <div class="pricing-grid">
+            <!-- Price Card 1: Starter -->
+            <div class="pricing-card">
+                <div>
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <p>Untuk bisnis yang mulai butuh sistem otomatisasi operasional dasar.</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">Start</span>
+                        <span class="amount">999.000</span>
+                        <span class="period">/sekali bayar</span>
+                    </div>
+                    <div class="tax-inclusive-badge">
+                        <i class="fa-solid fa-circle-check"></i> Termasuk PPN & Biaya Instalasi
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Landing Page Website</li>
+                        <li><i class="fa-solid fa-check"></i> Free Domain & Hosting (1 Tahun)</li>
+                        <li><i class="fa-solid fa-check"></i> Chatbot WhatsApp (Optional)</li>
+                        <li><i class="fa-solid fa-check"></i> Sistem Kasir / Point of Sale (POS)</li>
+                        <li><i class="fa-solid fa-check"></i> Finance & Pembukuan Kas</li>
+                        <li><i class="fa-solid fa-check"></i> Stock Management Gudang</li>
+                        <li><i class="fa-solid fa-check"></i> CRM Sistem Pelanggan</li>
+                        <li><i class="fa-solid fa-check"></i> 3 Device Access</li>
+                        <li><i class="fa-solid fa-check"></i> Free Maintenance 1 Bulan</li>
+                    </ul>
+                </div>
+                <div class="pricing-footer-actions">
+                    <button type="button" onclick="openPaketModal('Starter')" class="btn-card btn-card-outline">Pilih Paket Starter</button>
+                    <a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20ingin%20lihat%20Live%20Demo%20Paket%20Starter" target="_blank" rel="noopener noreferrer" class="btn-card btn-card-demo"><i class="fa-solid fa-play"></i> Live Demo</a>
+                </div>
+            </div>
+
+            <!-- Price Card 2: Enterprise (Popular) -->
+            <div class="pricing-card popular">
+                <span class="popular-badge">Paling Diminati</span>
+                <div>
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <p>Solusi lengkap tingkat lanjut untuk akselerasi & cabang bisnis Anda.</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">Start</span>
+                        <span class="amount">1.999.000</span>
+                        <span class="period">/sekali bayar</span>
+                    </div>
+                    <div class="tax-inclusive-badge">
+                        <i class="fa-solid fa-circle-check"></i> Termasuk PPN & Biaya Instalasi
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Modern UI/UX Design</li>
+                        <li><i class="fa-solid fa-check"></i> Landing Page & Company Profile</li>
+                        <li><i class="fa-solid fa-check"></i> Free Domain & Hosting (1 Tahun)</li>
+                        <li><i class="fa-solid fa-check"></i> Chatbot WhatsApp (Optional)</li>
+                        <li><i class="fa-solid fa-check"></i> Sistem POS, Finance, & Stock Management</li>
+                        <li><i class="fa-solid fa-check"></i> CRM System & Management Supplies</li>
+                        <li><i class="fa-solid fa-check"></i> Integrasi Payment Gateway (QRIS/Bank)</li>
+                        <li><i class="fa-solid fa-check"></i> Executive Report Analytics (Owner)</li>
+                        <li><i class="fa-solid fa-check"></i> 6 Device Access</li>
+                        <li><i class="fa-solid fa-check"></i> Free Maintenance 3 Bulan</li>
+                        <li><i class="fa-solid fa-check"></i> Request Fitur Tambahan 1x Gratis</li>
+                    </ul>
+                </div>
+                <div class="pricing-footer-actions">
+                    <button type="button" onclick="openPaketModal('Enterprise')" class="btn-card btn-card-primary">Pilih Paket Enterprise</button>
+                    <a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20ingin%20lihat%20Live%20Demo%20Paket%20Enterprise" target="_blank" rel="noopener noreferrer" class="btn-card btn-card-demo"><i class="fa-solid fa-play"></i> Live Demo</a>
+                </div>
+            </div>
+
+            <!-- Price Card 3: Custom (DENGAN TAMBAHAN MODULAR FITUR LENGKAP) -->
+            <div class="pricing-card">
+                <div>
+                    <div class="pricing-header">
+                        <h3>Custom</h3>
+                        <p>Penyesuaian total tanpa batas sesuai kebutuhan spesifik usaha Anda.</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">Start</span>
+                        <span class="amount" style="font-size:2rem;">2.999.000</span>
+                        <span class="period">/sekali bayar</span>
+                    </div>
+                    <div class="tax-inclusive-badge">
+                        <i class="fa-solid fa-circle-check"></i> Termasuk PPN & Biaya Instalasi
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Bebas Kustom Fitur</li>
+                        <li><i class="fa-solid fa-check"></i> Sistem Mengikuti Alur Kerja Bisnis Anda</li>
+                        <li><i class="fa-solid fa-check"></i> Modern UI/UX Design</li>
+                        <li><i class="fa-solid fa-check"></i> Landing Page & Company Profile</li>
+                        <li><i class="fa-solid fa-check"></i> Free Domain & Hosting (1 Tahun)</li>
+                        <li><i class="fa-solid fa-check"></i> Unlimited Akses Device</li>
+                        <li><i class="fa-solid fa-check"></i> Arsitektur Software Khusus Sesuai Scope</li>
+                        <li><i class="fa-solid fa-check"></i> Integrasi Database & API Pihak Ketiga</li>
+                        <li><i class="fa-solid fa-check"></i> Prioritas Penanganan Teknis & Support</li>
+                        <li><i class="fa-solid fa-check"></i> Free Maintenance 1 TAHUN</li>
+                        <li><i class="fa-solid fa-check"></i> Request Fitur Tambahan 3x Gratis</li>
+                    </ul>
+                </div>
+                <div class="pricing-footer-actions">
+                    <button type="button" onclick="openPaketModal('Custom')" class="btn-card btn-card-outline">Konsultasi Scope Custom</button>
+                    <a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20ingin%20lihat%20Live%20Demo%20Custom%20System" target="_blank" rel="noopener noreferrer" class="btn-card btn-card-demo"><i class="fa-solid fa-play"></i> Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIAYA TAMBAHAN & MAINTENANCE LANJUTAN -->
+    <section class="section" id="biaya-tambahan">
+        <div class="section-header">
+            <span class="section-subtitle">Transparansi Biaya</span>
+            <h2 class="section-title">Biaya Tambahan & Maintenance Lanjutan</h2>
+        </div>
+        <div class="fee-grid">
+            <div class="fee-card">
+                <div class="why-badge-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                <h3>Request Fitur Tambahan</h3>
+                <p class="fee-desc">Kuota request fitur baru di luar spesifikasi awal, khusus paket Enterprise & Custom.</p>
+                <ul class="fee-list">
+                    <li>Paket Enterprise <strong>1x Gratis</strong></li>
+                    <li>Paket Custom <strong>3x Gratis</strong></li>
+                    <li class="highlight">Di luar kuota <strong>Rp150.000 /fitur</strong></li>
+                </ul>
+            </div>
+            <div class="fee-card">
+                <div class="why-badge-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <h3>Maintenance Setelah Masa Garansi</h3>
+                <p class="fee-desc">Pilih skema perawatan sistem setelah periode free maintenance dari paket Anda berakhir.</p>
+                <ul class="fee-list">
+                    <li>Per Kasus (Pay as you go) <strong>Rp250.000 /case</strong></li>
+                    <li>Kontrak Bulanan <strong>Rp500.000 /bulan</strong></li>
+                    <li>Kontrak 6 Bulan <strong>Rp2.500.000</strong></li>
+                    <li class="highlight">Kontrak 1 Tahun <strong>Rp3.000.000</strong> <span class="fee-badge">Paling Hemat</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTOFOLIO -->
+    <section class="section" id="portofolio">
+        <div class="section-header">
+            <span class="section-subtitle">Studi Kasus</span>
+            <h2 class="section-title">Hasil Penerapan Sistem Digistack</h2>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="coverflow" id="coverflow-cafepos">
+                    <div class="coverflow-stage">
+                        <div class="coverflow-item"><img src="assets/portfolio/cafepos-login.png" alt="Halaman login Cafe POS Pro"></div>
+                        <div class="coverflow-item"><img src="assets/portfolio/cafepos-report.png" alt="Executive Report & Business Intelligence Cafe POS Pro"></div>
+                        <div class="coverflow-item"><img src="assets/portfolio/cafepos-pos.png" alt="Tampilan kasir POS Cafe POS Pro"></div>
+                        <div class="coverflow-item"><img src="assets/portfolio/cafepos-stock.png" alt="Stock management Cafe POS Pro"></div>
+                    </div>
+                    <button class="coverflow-nav coverflow-prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="coverflow-nav coverflow-next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="coverflow-dots"></div>
+                </div>
+                <div class="portfolio-body">
+                    <span class="portfolio-tag">POS & Business Intelligence</span>
+                    <h3 class="portfolio-title">Digistack — Executive Report Multi-Outlet</h3>
+                    <p class="portfolio-desc">Sistem kasir kopi lengkap dengan Executive Report konsolidasi P&L, manajemen stok bahan baku, hingga peran akses Kasir, Kitchen, Admin, Manager, dan Owner.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="coverflow" id="coverflow-glamstitch">
+                    <div class="coverflow-stage">
+                        <div class="coverflow-item"><img src="assets/portfolio/glamstitch-pos.png" alt="Tampilan kasir POS Glamstitch Fashion"></div>
+                        <div class="coverflow-item"><img src="assets/portfolio/glamstitch-dashboard.png" alt="Dashboard Glamstitch Fashion POS"></div>
+                        <div class="coverflow-item"><img src="assets/portfolio/glamstitch-sales.png" alt="Sales Overview Glamstitch Fashion POS"></div>
+                        <div class="coverflow-item"><img src="assets/portfolio/glamstitch-stock.png" alt="Stock Levels Glamstitch Fashion POS"></div>
+                    </div>
+                    <button class="coverflow-nav coverflow-prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="coverflow-nav coverflow-next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="coverflow-dots"></div>
+                </div>
+                <div class="portfolio-body">
+                    <span class="portfolio-tag">POS & Fashion Retail</span>
+                    <h3 class="portfolio-title">Digistack — POS Fashion Retail</h3>
+                    <p class="portfolio-desc">Sistem kasir fashion dengan dashboard penjualan, sales overview, dan kontrol stok multi-kategori (Apparels, Accessories, Footwear, Gifts).</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="coverflow" id="coverflow-metafinance">
+                    <div class="coverflow-stage">
+                        <div class="coverflow-item"><img src="assets/portfolio/metafinance-invoice.png" alt="Form Invoice Meta Finance"></div>
+                        <div class="coverflow-item"><img src="assets/portfolio/metafinance-pembelian.png" alt="Form Pembelian Meta Finance"></div>
+                    </div>
+                    <button class="coverflow-nav coverflow-prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="coverflow-nav coverflow-next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="coverflow-dots"></div>
+                </div>
+                <div class="portfolio-body">
+                    <span class="portfolio-tag">Software Custom · Finance</span>
+                    <h3 class="portfolio-title">Digistack — Invoice & Pembelian</h3>
+                    <p class="portfolio-desc">Sistem kustom pengawasan alur bahan baku dari supplier hingga ke barang jadi, lengkap dengan pembuatan invoice otomatis dan perhitungan PPN 11%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION (CTA) -->
+    <div class="cta-banner-wrapper">
+        <div class="cta-banner-moka">
+            <div class="cta-content">
+                <h2 class="cta-title">Cari tahu bagaimana Digistack bisa membantu usaha Anda</h2>
+                <p class="cta-desc">Konsultasikan alur operasional bisnis Anda dengan tim profesional kami dan dapatkan sistem kustom terbaik.</p>
+                <div class="cta-actions">
+                    <a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20ingin%20konsultasi%20gratis%20sistem" target="_blank" rel="noopener noreferrer" class="btn-cyan">
+                        <i class="fa-solid fa-play"></i> Konsultasi & Live Demo Gratis
+                    </a>
+                </div>
+            </div>
+            <div class="cta-hardware-box">
+                <div class="pos-hardware-card">
+                    <div class="hardware-item">
+                        <div class="hardware-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="hardware-info">
+                            <h4>Scale Up Bisnis</h4>
+                            <p>Siap mendukung ekspansi & cabang baru</p>
+                        </div>
+                    </div>
+                    <div class="hardware-item">
+                        <div class="hardware-icon" style="background:#10b981;"><i class="fa-solid fa-gears"></i></div>
+                        <div class="hardware-info">
+                            <h4>Sistem Otomatis</h4>
+                            <p>Memangkas proses manual & human error</p>
+                        </div>
+                    </div>
+                    <div class="hardware-item">
+                        <div class="hardware-icon" style="background:#f59e0b;"><i class="fa-solid fa-stopwatch"></i></div>
+                        <div class="hardware-info">
+                            <h4>Efisiensi Bisnis</h4>
+                            <p>Hemat waktu, biaya, dan operasional tim</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP FORM PAKET (LEAD CAPTURE) -->
+    <div class="paket-modal-overlay" id="paketModalOverlay">
+        <div class="paket-modal-box">
+            <button type="button" class="paket-modal-close" id="paketModalClose" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+            <span class="paket-modal-badge"><i class="fa-solid fa-box-open"></i> Paket <span id="paketModalNama">Starter</span></span>
+            <h3>Ajukan Paket Ini</h3>
+            <p class="paket-modal-desc">Isi data di bawah, tim kami akan segera menghubungi Anda untuk konfirmasi & proses selanjutnya.</p>
+
+            <div class="paket-form-status" id="paketFormStatus"></div>
+
+            <form id="paketForm">
+                <input type="hidden" name="Paket" id="paketFormPaket" value="Starter">
+                <input type="hidden" name="_subject" id="paketFormSubject" value="Lead Baru - Paket Starter - Website Digistack">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="paket-form-group">
+                    <label for="paketNama">Nama Lengkap</label>
+                    <input type="text" id="paketNama" name="Nama" required placeholder="Nama Anda">
+                </div>
+                <div class="paket-form-group">
+                    <label for="paketWa">Nomor WhatsApp</label>
+                    <input type="tel" id="paketWa" name="No. WhatsApp" required placeholder="08xxxxxxxxxx">
+                </div>
+                <div class="paket-form-group">
+                    <label for="paketEmail">Email</label>
+                    <input type="email" id="paketEmail" name="Email" required placeholder="nama@email.com">
+                </div>
+                <div class="paket-form-group">
+                    <label for="paketUsaha">Nama Usaha</label>
+                    <input type="text" id="paketUsaha" name="Nama Usaha" required placeholder="Nama usaha Anda">
+                </div>
+                <div class="paket-form-group">
+                    <label for="paketDisplay">Paket Dipilih</label>
+                    <input type="text" id="paketDisplay" readonly value="Starter">
+                </div>
+
+                <button type="submit" class="paket-form-submit" id="paketFormSubmit">Kirim Pengajuan</button>
+                <p class="paket-form-note">Data Anda akan dikirim ke tim Digistack dan hanya digunakan untuk keperluan konfirmasi paket.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20ingin%20konsultasi%20sistem" target="_blank" rel="noopener noreferrer" class="floating-wa" title="Hubungi Kami di WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Digistack. All rights reserved. Solusi Digitalisasi Total UMKM.</p>
+    </footer>
+
+    <!-- SCRIPT NAVBAR MOBILE: HAMBURGER TOGGLE & DROPDOWN ACCORDION -->
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', isOpen);
+            navToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        document.querySelectorAll('.nav-links > li').forEach((item) => {
+            const topLink = item.querySelector(':scope > a');
+            const submenu = item.querySelector(':scope > .dropdown-menu');
+
+            if (submenu) {
+                topLink.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 900) {
+                        e.preventDefault();
+                        item.classList.toggle('dropdown-open');
+                    }
+                });
+            } else {
+                topLink.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                });
+            }
+        });
+    </script>
+
+    <!-- SCRIPT POPUP FORM PAKET (LEAD CAPTURE VIA FORMSUBMIT.CO) -->
+    <script>
+        const paketModalOverlay = document.getElementById('paketModalOverlay');
+        const paketModalClose = document.getElementById('paketModalClose');
+        const paketModalNama = document.getElementById('paketModalNama');
+        const paketFormPaket = document.getElementById('paketFormPaket');
+        const paketFormSubject = document.getElementById('paketFormSubject');
+        const paketDisplay = document.getElementById('paketDisplay');
+        const paketForm = document.getElementById('paketForm');
+        const paketFormSubmit = document.getElementById('paketFormSubmit');
+        const paketFormStatus = document.getElementById('paketFormStatus');
+
+        function openPaketModal(namaPaket) {
+            paketModalNama.textContent = namaPaket;
+            paketFormPaket.value = namaPaket;
+            paketFormSubject.value = 'Lead Baru - Paket ' + namaPaket + ' - Website Digistack';
+            paketDisplay.value = namaPaket;
+            paketFormStatus.className = 'paket-form-status';
+            paketFormStatus.textContent = '';
+            paketModalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePaketModal() {
+            paketModalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        paketModalClose.addEventListener('click', closePaketModal);
+        paketModalOverlay.addEventListener('click', (e) => {
+            if (e.target === paketModalOverlay) closePaketModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && paketModalOverlay.classList.contains('active')) closePaketModal();
+        });
+
+        paketForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            paketFormSubmit.disabled = true;
+            paketFormSubmit.textContent = 'Mengirim...';
+            paketFormStatus.className = 'paket-form-status';
+
+            try {
+                const formData = new FormData(paketForm);
+                const response = await fetch('https://formsubmit.co/ajax/digistack.online@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error('Gagal mengirim');
+
+                paketFormStatus.className = 'paket-form-status show success';
+                paketFormStatus.textContent = 'Berhasil terkirim! Tim kami akan segera menghubungi Anda.';
+                paketForm.reset();
+                setTimeout(closePaketModal, 2500);
+            } catch (err) {
+                paketFormStatus.className = 'paket-form-status show error';
+                paketFormStatus.textContent = 'Gagal mengirim data. Silakan coba lagi atau hubungi kami langsung via WhatsApp.';
+            } finally {
+                paketFormSubmit.disabled = false;
+                paketFormSubmit.textContent = 'Kirim Pengajuan';
+            }
+        });
+    </script>
+
+    <!-- SCRIPT AUTO-SWITCH HERO SLIDER DENGAN DETENT 30 DETIK -->
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.dot-indicator');
+        const heroSliderWrapper = document.querySelector('.hero-slider-wrapper');
+        let slideInterval;
+        let pauseTimeout;
+
+        // Sinkronkan tinggi wrapper dengan slide aktif agar dots/tombol di bawahnya
+        // tidak tertindih saat teks wrap jadi lebih banyak baris (mis. di layar mobile).
+        function syncSliderHeight() {
+            const active = document.querySelector('.hero-slide.active');
+            if (active && heroSliderWrapper) {
+                heroSliderWrapper.style.height = active.offsetHeight + 'px';
+            }
+        }
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slideIndex = (index + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+            syncSliderHeight();
+        }
+
+        window.addEventListener('resize', syncSliderHeight);
+
+        function nextSlide() {
+            showSlide(slideIndex + 1);
+        }
+
+        // Ketika dot indicator diklik oleh user
+        function currentSlide(index) {
+            showSlide(index);
+            
+            // Hentikan timer otomatis & timeout penahanan yang ada
+            clearInterval(slideInterval);
+            clearTimeout(pauseTimeout);
+            
+            // Tahan tampilan slide selama 30 detik (30.000 ms)
+            pauseTimeout = setTimeout(() => {
+                resetInterval();
+            }, 30000);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 4500); // Interval standar 4.5 detik
+        }
+
+        // Jalankan slide otomatis saat halaman dimuat
+        syncSliderHeight();
+        resetInterval();
+    </script>
+
+    <!-- SCRIPT COVER FLOW: CAROUSEL GAMBAR CARD PORTOFOLIO -->
+    <script>
+        document.querySelectorAll('.coverflow').forEach((stageWrap) => {
+            const items = Array.from(stageWrap.querySelectorAll('.coverflow-item'));
+            const dotsWrap = stageWrap.querySelector('.coverflow-dots');
+            const total = items.length;
+            let active = 0;
+            let autoTimer;
+
+            items.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.className = 'coverflow-dot';
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            });
+            const dots = Array.from(dotsWrap.children);
+
+            function render() {
+                items.forEach((item, i) => {
+                    let offset = i - active;
+                    if (offset > total / 2) offset -= total;
+                    if (offset <= -total / 2) offset += total;
+
+                    const abs = Math.abs(offset);
+                    const sign = Math.sign(offset);
+                    const translateX = offset * 145;
+                    const translateZ = -abs * 160;
+                    const rotateY = -sign * Math.min(abs, 1) * 42;
+                    const scale = Math.max(1 - abs * 0.22, 0.5);
+
+                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
+                    item.style.zIndex = String(10 - abs);
+                    item.style.opacity = abs > 2 ? '0' : String(1 - abs * 0.3);
+                });
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === active));
+            }
+
+            function goTo(index) {
+                active = (index + total) % total;
+                render();
+            }
+
+            function resetAutoplay() {
+                clearInterval(autoTimer);
+                autoTimer = setInterval(() => goTo(active + 1), 3200);
+            }
+
+            stageWrap.querySelector('.coverflow-prev').addEventListener('click', () => { goTo(active - 1); resetAutoplay(); });
+            stageWrap.querySelector('.coverflow-next').addEventListener('click', () => { goTo(active + 1); resetAutoplay(); });
+            items.forEach((item, i) => item.addEventListener('click', () => { goTo(i); resetAutoplay(); }));
+
+            stageWrap.addEventListener('mouseenter', () => clearInterval(autoTimer));
+            stageWrap.addEventListener('mouseleave', resetAutoplay);
+
+            render();
+            resetAutoplay();
+        });
+    </script>
+
+</body>
+</html>

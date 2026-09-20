@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digistack - Company Profile | Solusi Digitalisasi Total UMKM</title>
+
+    <meta name="description" content="Digistack adalah penyedia solusi digitalisasi total untuk UMKM Indonesia — POS, Chatbot WhatsApp, Finance, Stock, CRM, hingga sistem kustom sekali bayar tanpa biaya langganan.">
+    <meta name="author" content="Digistack">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cpath d='M15 25 L40 10 L65 25' stroke='%230284c7' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15 50 L40 35 L65 50' stroke='%230284c7' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15 75 L40 60 L65 75' stroke='%230284c7' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --accent-light: #38bdf8;
+            --hero-accent: #facc15;
+            --accent: #10b981;
+            --bg-light: #f7f8fa;
+            --surface: #ffffff;
+            --text-main: #1e2530;
+            --text-muted: #64748b;
+            --border-color: #e6e9ee;
+            --radius: 16px;
+            --shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--surface); color: var(--text-main); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        .serif { font-family: 'Cormorant Garamond', serif; }
+        .container { max-width: 1220px; margin: 0 auto; padding: 0 2rem; }
+        .section { padding: 7rem 0; }
+        .section-alt { background: var(--bg-light); }
+
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-size: 0.8rem; font-weight: 700; color: var(--primary);
+            text-transform: uppercase; letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+        .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--primary); display: inline-block; }
+
+        .section-head { max-width: 680px; margin-bottom: 3.5rem; }
+        .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+        .section-title { font-size: 2.6rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; line-height: 1.2; }
+        .section-title .accent { color: var(--primary); }
+        .section-desc { font-size: 1.02rem; color: var(--text-muted); margin-top: 1.1rem; line-height: 1.75; }
+
+        .btn { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 0.95rem; padding: 0.95rem 2rem; border-radius: 50px; transition: var(--transition); }
+        .btn-gold { background: linear-gradient(135deg, #00aeef, var(--primary)); color: #fff; box-shadow: 0 10px 25px rgba(0, 174, 239, 0.35); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(0, 174, 239, 0.5); }
+        .btn-outline-light { border: 1.5px solid rgba(255,255,255,0.35); color: #fff; }
+        .btn-outline-light:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+        .btn-navy { background: var(--navy); color: #fff; }
+        .btn-navy:hover { background: var(--navy-light); transform: translateY(-2px); }
+
+        /* ============ NAVBAR ============ */
+        header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(3, 105, 161, 0.95); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+        .nav-container { max-width: 1220px; margin: 0 auto; padding: 1.1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 0.75rem; }
+        .brand-title { font-weight: 800; font-size: 1.35rem; color: #fff; letter-spacing: -0.02em; line-height: 1; }
+        .brand-title span { color: var(--accent-light); }
+        .brand-tagline { display: block; font-size: 0.52rem; font-weight: 700; color: #bae6fd; letter-spacing: 2px; margin-top: 3px; }
+        .nav-links { display: flex; gap: 2.2rem; align-items: center; }
+        .nav-links a { font-size: 0.9rem; font-weight: 600; color: #f0f9ff; transition: var(--transition); }
+        .nav-links a:hover { color: var(--accent-light); }
+        .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; }
+
+        @media (max-width: 960px) {
+            .nav-links { position: absolute; top: 100%; left: 0; width: 100%; flex-direction: column; align-items: stretch; gap: 0; background: var(--primary-dark); max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+            .nav-links.active { max-height: 400px; padding: 0.5rem 0 1.2rem; }
+            .nav-links a { padding: 0.75rem 2rem; display: block; border-top: 1px solid rgba(255,255,255,0.08); }
+            .nav-toggle { display: block; }
+        }
+
+        /* ============ HERO ============ */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, #0284c7 0%, #0369a1 40%, #0f172a 100%); overflow: hidden; padding: 8rem 0 5rem; }
+        .hero::before {
+            content: ""; position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 60px 60px; mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+        }
+        .hero::after {
+            content: ""; position: absolute; top: -10%; right: -8%; width: 620px; height: 620px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(2, 132, 199, 0) 70%); border-radius: 50%;
+        }
+        .hero-inner { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; text-align: center; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.55rem 1.3rem;
+            border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.15); border-radius: 50px;
+            color: #fff; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 2rem;
+        }
+        .hero-title { font-size: 3.4rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+        .hero-title .serif-accent { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700; color: var(--hero-accent); }
+        .hero-desc { font-size: 1.1rem; color: #e0f2fe; max-width: 620px; margin: 0 auto 2.6rem; line-height: 1.75; }
+        .hero-actions { display: flex; gap: 1.1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4.5rem; }
+
+        .hero-stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); max-width: 900px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 2.5rem; }
+        .hero-stat { text-align: center; border-right: 1px solid rgba(255,255,255,0.15); }
+        .hero-stat:last-child { border-right: none; }
+        .hero-stat strong { display: block; font-size: 2.1rem; font-weight: 800; color: var(--accent-light); font-family: 'Cormorant Garamond', serif; }
+        .hero-stat span { font-size: 0.75rem; color: #bae6fd; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        @media (max-width: 700px) {
+            .hero-title { font-size: 2.2rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 0; }
+            .hero-stat { border-right: none; }
+        }
+
+        /* ============ ABOUT ============ */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
+        .about-text .principle { display: flex; gap: 1rem; align-items: flex-start; margin-top: 1.4rem; }
+        .about-text .principle i { color: var(--primary); font-size: 1rem; margin-top: 3px; }
+        .about-text .principle p { font-size: 0.95rem; color: var(--text-main); font-weight: 600; }
+
+        .about-visual { position: relative; }
+        .about-panel {
+            background: linear-gradient(150deg, #0284c7 0%, #0369a1 50%, #0f172a 100%);
+            border-radius: var(--radius); padding: 3rem 2.5rem; color: #fff;
+            box-shadow: var(--shadow); position: relative; overflow: hidden;
+        }
+        .about-panel::before { content: ""; position: absolute; top: -30%; left: -20%; width: 320px; height: 320px; background: radial-gradient(circle, rgba(56, 189, 248, 0.2), transparent 70%); border-radius: 50%; }
+        .about-panel-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+        .about-panel-item i { font-size: 1.5rem; color: var(--accent-light); margin-bottom: 0.8rem; }
+        .about-panel-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .about-panel-item p { font-size: 0.78rem; color: #94a3b8; line-height: 1.55; }
+
+        /* ============ VISI MISI ============ */
+        .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .vm-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 2.6rem; transition: var(--transition); position: relative; }
+        .vm-card:hover { box-shadow: var(--shadow); transform: translateY(-6px); border-color: var(--primary); }
+        .vm-icon { width: 56px; height: 56px; border-radius: 14px; background: rgba(2, 132, 199, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.5rem; }
+        .vm-card h3 { font-size: 1.4rem; font-weight: 800; color: var(--navy); margin-bottom: 1rem; }
+        .vm-card p { font-size: 0.96rem; color: var(--text-muted); line-height: 1.75; }
+        .vm-list { margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; }
+        .vm-list li { display: flex; gap: 0.7rem; font-size: 0.92rem; color: var(--text-main); align-items: flex-start; }
+        .vm-list li i { color: var(--primary); margin-top: 4px; font-size: 0.85rem; }
+
+        /* ============ WHY US ============ */
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .why-item { padding: 0.5rem 0; }
+        .why-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: rgba(2,132,199,0.15); line-height: 1; margin-bottom: 0.6rem; }
+        .why-item h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+        .why-item p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
+
+        /* ============ LAYANAN ============ */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.4rem; }
+        .service-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.8rem 1.6rem; transition: var(--transition); }
+        .service-card:hover { border-color: var(--primary); box-shadow: var(--shadow); transform: translateY(-4px); }
+        .service-icon { width: 44px; height: 44px; border-radius: 11px; background: rgba(2, 132, 199, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: 1.1rem; }
+        .service-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+        .service-card p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.55; }
+
+        /* ============ PROSES ============ */
+        .process-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; position: relative; }
+        .process-row::before { content: ""; position: absolute; top: 28px; left: 10%; right: 10%; height: 1px; background: repeating-linear-gradient(90deg, var(--border-color) 0 10px, transparent 10px 18px); }
+        .process-step { text-align: center; position: relative; z-index: 1; }
+        .process-num { width: 58px; height: 58px; margin: 0 auto 1.2rem; border-radius: 50%; background: var(--surface); border: 2px solid var(--navy); color: var(--navy); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; }
+        .process-step.highlight .process-num { background: var(--primary); border-color: var(--primary); color: #fff; }
+        .process-step h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+        .process-step p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
+
+        @media (max-width: 900px) {
+            .process-row { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+            .process-row::before { display: none; }
+        }
+
+        /* ============ PORTFOLIO ============ */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .portfolio-card { background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: 0 10px 30px rgba(10,18,36,0.08); transition: var(--transition); }
+        .portfolio-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+        .portfolio-card img { width: 100%; height: 210px; object-fit: cover; object-position: top center; }
+        .portfolio-body { padding: 1.6rem 1.6rem 1.8rem; }
+        .portfolio-tag { font-size: 0.7rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; }
+        .portfolio-title { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin: 0.6rem 0 0.6rem; }
+        .portfolio-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* ============ CTA ============ */
+        .cta-section { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #fff; position: relative; overflow: hidden; }
+        .cta-section::before { content: ""; position: absolute; top: -20%; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(56, 189, 248, 0.25), transparent 70%); border-radius: 50%; }
+        .cta-inner { position: relative; z-index: 1; text-align: center; max-width: 700px; margin: 0 auto; }
+        .cta-title { font-size: 2.4rem; font-weight: 800; margin-bottom: 1.2rem; letter-spacing: -0.02em; }
+        .cta-desc { font-size: 1.02rem; color: #e0f2fe; margin-bottom: 2.5rem; line-height: 1.7; }
+        .cta-actions { display: flex; gap: 1.1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* ============ FOOTER ============ */
+        footer { background: var(--surface); border-top: 1px solid var(--border-color); color: var(--text-muted); padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border-color); }
+
+        /* Cegah grid item melebar melebihi track-nya (default min-width:auto pada grid item
+           bisa memaksa overflow horizontal di layar sempit ketika kontennya panjang). */
+        .hero-stats > *, .about-grid > *, .about-panel-grid > *, .vm-grid > *, .why-grid > *,
+        .services-grid > *, .process-row > *, .portfolio-grid > *, .footer-grid > * { min-width: 0; }
+        .footer-brand .brand-title { color: var(--navy); }
+        .footer-brand .brand-title span { color: var(--primary); }
+        .footer-brand p { font-size: 0.88rem; margin-top: 1rem; line-height: 1.7; max-width: 320px; }
+        .footer-col h5 { color: var(--navy); font-size: 0.9rem; font-weight: 700; margin-bottom: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .footer-col li { margin-bottom: 0.7rem; font-size: 0.88rem; }
+        .footer-col a:hover { color: var(--primary); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.8rem; font-size: 0.8rem; flex-wrap: wrap; gap: 1rem; }
+        .footer-socials { display: flex; gap: 0.9rem; }
+        .footer-socials a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-color); color: var(--navy); display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+        .footer-socials a:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+        @media (max-width: 900px) {
+            .about-grid, .vm-grid { grid-template-columns: 1fr; }
+            .why-grid, .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .section { padding: 4.5rem 0; }
+            .section-title { font-size: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .why-grid, .services-grid { grid-template-columns: 1fr; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#beranda" class="brand">
+                <svg width="36" height="36" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 15 25 L 40 10 L 65 25" stroke="#38BDF8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 15 50 L 40 35 L 65 50" stroke="#60A5FA" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 15 75 L 40 60 L 65 75" stroke="#93C5FD" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="73" cy="10" r="5" fill="#10B981"/>
+                </svg>
+                <div>
+                    <span class="brand-title">DIGI<span>STACK</span></span>
+                    <span class="brand-tagline">COMPANY PROFILE</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#keunggulan">Keunggulan</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20ingin%20konsultasi%20sistem" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 0.6rem 1.4rem;"><i class="fa-brands fa-whatsapp"></i> Hubungi Kami</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+        <div class="container hero-inner">
+            <span class="hero-badge"><i class="fa-solid fa-award"></i> Mitra Digitalisasi Terpercaya UMKM</span>
+            <h1 class="hero-title">Membangun Sistem Digital yang <span class="serif-accent">Tumbuh Bersama</span> Bisnis Anda</h1>
+            <p class="hero-desc">Digistack menghadirkan solusi digitalisasi total — dari sistem kasir, chatbot WhatsApp, hingga manajemen keuangan — dirancang khusus mengikuti alur kerja bisnis Anda, sekali bayar tanpa biaya langganan bulanan.</p>
+            <div class="hero-actions">
+                <a href="#tentang" class="btn btn-gold"><i class="fa-solid fa-arrow-down"></i> Kenali Kami Lebih Jauh</a>
+                <a href="index.html#harga" class="btn btn-outline-light"><i class="fa-solid fa-tags"></i> Lihat Layanan & Harga</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong>14+</strong><span>Modul Terintegrasi</span></div>
+                <div class="hero-stat"><strong>100%</strong><span>Sistem Kustom</span></div>
+                <div class="hero-stat"><strong>Rp0</strong><span>Biaya Bulanan</span></div>
+                <div class="hero-stat"><strong>1 Tahun</strong><span>Gratis Domain & Hosting</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section class="section" id="tentang">
+        <div class="container about-grid">
+            <div class="about-text">
+                <span class="eyebrow">Tentang Kami</span>
+                <h2 class="section-title">Mitra Transformasi Digital untuk Bisnis yang Ingin Naik Kelas</h2>
+                <p class="section-desc">Digistack adalah penyedia solusi digitalisasi total bagi UMKM Indonesia. Kami percaya setiap bisnis memiliki alur kerja yang unik — karena itu setiap sistem yang kami bangun disesuaikan sepenuhnya dengan kebutuhan operasional klien, bukan sebaliknya. Dari sistem kasir, chatbot WhatsApp, hingga manajemen keuangan multi-cabang, seluruhnya terhubung dalam satu ekosistem yang efisien.</p>
+                <div class="principle"><i class="fa-solid fa-circle-check"></i><p>Sistem kustom sekali bayar, tanpa biaya langganan tersembunyi</p></div>
+                <div class="principle"><i class="fa-solid fa-circle-check"></i><p>Pendampingan penuh dari konsultasi hingga maintenance berkelanjutan</p></div>
+                <div class="principle"><i class="fa-solid fa-circle-check"></i><p>Infrastruktur server, domain, dan hosting kami siapkan sepenuhnya</p></div>
+            </div>
+            <div class="about-visual">
+                <div class="about-panel">
+                    <div class="about-panel-grid">
+                        <div class="about-panel-item"><i class="fa-solid fa-bullseye"></i><h4>Fokus Klien</h4><p>Sistem dirancang mengikuti SOP dan alur kerja nyata bisnis Anda.</p></div>
+                        <div class="about-panel-item"><i class="fa-solid fa-shield-halved"></i><h4>Transparan</h4><p>Struktur biaya jelas sejak awal, tanpa biaya tersembunyi.</p></div>
+                        <div class="about-panel-item"><i class="fa-solid fa-diagram-project"></i><h4>Terintegrasi</h4><p>POS, keuangan, stok, hingga laporan owner dalam satu ekosistem.</p></div>
+                        <div class="about-panel-item"><i class="fa-solid fa-headset"></i><h4>Siap Mendampingi</h4><p>Tim teknis siap membantu implementasi & perawatan sistem.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISI & MISI -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-head center" style="margin-left:auto; margin-right:auto;">
+                <span class="eyebrow" style="justify-content:center; display:flex;">Arah Kami</span>
+                <h2 class="section-title">Visi & Misi</h2>
+            </div>
+            <div class="vm-grid">
+                <div class="vm-card">
+                    <div class="vm-icon"><i class="fa-solid fa-eye"></i></div>
+                    <h3>Visi</h3>
+                    <p>Menjadi mitra transformasi digital tepercaya bagi UMKM di seluruh Indonesia, memberdayakan setiap pelaku usaha untuk beroperasi lebih efisien tanpa terbebani biaya teknologi yang mahal.</p>
+                </div>
+                <div class="vm-card">
+                    <div class="vm-icon"><i class="fa-solid fa-compass"></i></div>
+                    <h3>Misi</h3>
+                    <ul class="vm-list">
+                        <li><i class="fa-solid fa-caret-right"></i> Membangun sistem digital kustom yang benar-benar sesuai alur kerja bisnis klien.</li>
+                        <li><i class="fa-solid fa-caret-right"></i> Menghadirkan solusi teknologi sekali bayar tanpa biaya langganan tersembunyi.</li>
+                        <li><i class="fa-solid fa-caret-right"></i> Mendampingi klien penuh mulai dari konsultasi, implementasi, hingga maintenance.</li>
+                        <li><i class="fa-solid fa-caret-right"></i> Terus berinovasi mengikuti perkembangan kebutuhan operasional UMKM modern.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section class="section" id="keunggulan">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Kenapa Digistack</span>
+                <h2 class="section-title">Keunggulan yang Membedakan Kami</h2>
+                <p class="section-desc">Enam prinsip yang kami pegang dalam setiap proyek digitalisasi bersama klien.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item"><div class="why-num">01</div><h3>Kustom & Fleksibel</h3><p>Setiap modul dikembangkan menyesuaikan alur kerja dan logika bisnis operasional Anda.</p></div>
+                <div class="why-item"><div class="why-num">02</div><h3>Integrasi End-to-End</h3><p>Lini depan penjualan (POS, Chatbot WA, Web) terhubung langsung ke gudang dan keuangan.</p></div>
+                <div class="why-item"><div class="why-num">03</div><h3>Investasi Hemat</h3><p>Sekali bayar tanpa biaya berlangganan tersembunyi, sistem menjadi aset milik Anda.</p></div>
+                <div class="why-item"><div class="why-num">04</div><h3>Dukungan & Maintenance</h3><p>Tim teknis mendampingi implementasi, pelatihan tim, dan garansi pemeliharaan berkala.</p></div>
+                <div class="why-item"><div class="why-num">05</div><h3>Infrastruktur Siap Pakai</h3><p>Server, database, domain, hingga hosting sudah kami siapkan, gratis di tahun pertama.</p></div>
+                <div class="why-item"><div class="why-num">06</div><h3>Sesuai Budget Anda</h3><p>Fitur dan biaya bisa diatur bertahap mengikuti budget dan kebutuhan usaha Anda.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN (RINGKASAN — detail & harga lengkap ada di index.html) -->
+    <section class="section section-alt" id="layanan">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Ekosistem Layanan</span>
+                <h2 class="section-title">Empat Pilar Digitalisasi Bisnis Anda</h2>
+                <p class="section-desc">14 modul kami rangkum dalam empat pilar utama — dari transaksi harian hingga pengambilan keputusan strategis.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-cash-register"></i></div>
+                    <h4>Penjualan & Kasir</h4>
+                    <p>Point of Sale, Chatbot WhatsApp Auto, dan Payment Gateway untuk transaksi yang cepat dan tercatat rapi.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h4>Operasional & Stok</h4>
+                    <p>Stock Management, Multi-Outlet System, Supplies & Procurement, hingga Internal Audit Automation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-calculator"></i></div>
+                    <h4>Keuangan & SDM</h4>
+                    <p>Finance & Accounting, HRIS (Presensi & Gaji), serta CRM System untuk mengelola pelanggan.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4>Manajemen & Analitik</h4>
+                    <p>Executive Report, SOP Automation, Remote Controlling, dan Company Profile Web.</p>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top: 3rem;">
+                <a href="index.html#layanan" class="btn btn-navy">Lihat Detail 14 Modul & Paket Harga <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROSES KERJA -->
+    <section class="section">
+        <div class="container">
+            <div class="section-head center">
+                <span class="eyebrow" style="justify-content:center; display:flex;">Cara Kerja</span>
+                <h2 class="section-title">Proses Kolaborasi Bersama Kami</h2>
+            </div>
+            <div class="process-row">
+                <div class="process-step highlight"><div class="process-num">1</div><h4>Konsultasi</h4><p>Diskusi kebutuhan bisnis via WhatsApp, gratis tanpa biaya apa pun.</p></div>
+                <div class="process-step"><div class="process-num">2</div><h4>Order</h4><p>Setelah cocok, tim kami langsung mulai mengerjakan sistem Anda.</p></div>
+                <div class="process-step"><div class="process-num">3</div><h4>Cek & Revisi</h4><p>Review hasil dan ajukan perubahan hingga sesuai kebutuhan.</p></div>
+                <div class="process-step"><div class="process-num">4</div><h4>Bayar & Pelatihan</h4><p>Pembayaran setelah review final, dilanjutkan pelatihan tim.</p></div>
+                <div class="process-step"><div class="process-num">5</div><h4>Go-Live</h4><p>Sistem online dan siap dipakai penuh untuk operasional harian.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTOFOLIO -->
+    <section class="section section-alt" id="portofolio">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Studi Kasus</span>
+                <h2 class="section-title">Hasil Penerapan Sistem Digistack</h2>
+                <p class="section-desc">Sebagian implementasi nyata sistem Digistack di berbagai jenis usaha.</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <img src="assets/portfolio/cafepos-pos.png" alt="Tampilan kasir Cafe POS Pro">
+                    <div class="portfolio-body">
+                        <span class="portfolio-tag">POS & Business Intelligence</span>
+                        <h3 class="portfolio-title">Digistack — Cafe POS</h3>
+                        <p class="portfolio-desc">Kasir kopi lengkap dengan Executive Report konsolidasi P&L dan peran akses Kasir hingga Owner.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="assets/portfolio/glamstitch-dashboard.png" alt="Dashboard Glamstitch Fashion POS">
+                    <div class="portfolio-body">
+                        <span class="portfolio-tag">POS & Fashion Retail</span>
+                        <h3 class="portfolio-title">Digistack — Fashion POS</h3>
+                        <p class="portfolio-desc">Kasir fashion dengan dashboard penjualan dan kontrol stok multi-kategori.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="assets/portfolio/metafinance-invoice.png" alt="Form Invoice Meta Finance">
+                    <div class="portfolio-body">
+                        <span class="portfolio-tag">Software Custom · Finance</span>
+                        <h3 class="portfolio-title">Digistack — Finance System</h3>
+                        <p class="portfolio-desc">Pengawasan alur bahan baku hingga invoice otomatis dengan perhitungan PPN 11%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section" id="kontak">
+        <div class="container cta-inner">
+            <h2 class="cta-title">Mari Bangun Sistem Digital Bisnis Anda Bersama Kami</h2>
+            <p class="cta-desc">Konsultasikan kebutuhan operasional bisnis Anda dengan tim profesional kami — gratis, tanpa komitmen di awal.</p>
+            <div class="cta-actions">
+                <a href="https://wa.me/6285730700286?text=Halo%20Digistack,%20saya%20ingin%20konsultasi%20gratis%20sistem" target="_blank" rel="noopener noreferrer" class="btn btn-gold"><i class="fa-brands fa-whatsapp"></i> Konsultasi Gratis Sekarang</a>
+                <a href="index.html" class="btn btn-outline-light"><i class="fa-solid fa-globe"></i> Kunjungi Website Utama</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <svg width="34" height="34" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 15 25 L 40 10 L 65 25" stroke="#38BDF8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M 15 50 L 40 35 L 65 50" stroke="#60A5FA" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M 15 75 L 40 60 L 65 75" stroke="#93C5FD" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="73" cy="10" r="5" fill="#10B981"/>
+                        </svg>
+                        <span class="brand-title">DIGI<span>STACK</span></span>
+                    </div>
+                    <p>Solusi digitalisasi total untuk UMKM Indonesia — sistem kustom sekali bayar tanpa biaya langganan bulanan.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Navigasi</h5>
+                    <ul>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#keunggulan">Keunggulan</a></li>
+                        <li><a href="#layanan">Layanan</a></li>
+                        <li><a href="#portofolio">Portofolio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Kontak</h5>
+                    <ul>
+                        <li><i class="fa-brands fa-whatsapp"></i> +62 857-3070-0286</li>
+                        <li><i class="fa-solid fa-globe"></i> www.digistack.id</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Digistack. All rights reserved.</span>
+                <div class="footer-socials">
+                    <a href="https://wa.me/6285730700286" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="index.html" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('active');
+            navToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+    </script>
+</body>
+</html>
