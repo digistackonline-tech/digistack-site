@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Pembuatan Sistem & POS Kustom UMKM | Digistack</title>
+
+    <!-- SEO & Social Meta (Standar PRD SEO Maksimal) -->
+    <meta name="description" content="Katalog lengkap layanan Digistack: Sistem POS kasir kustom, chatbot WhatsApp, manajemen stok multi-cabang & laporan keuangan. Sekali bayar tanpa langganan.">
+    <meta name="keywords" content="layanan pembuatan sistem kasir, software pos custom, integrasi chatbot whatsapp, manajemen stok multi outlet, sistem pembukuan umkm">
+    <meta name="author" content="Digistack">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://digistack.site/layanan.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Digistack">
+    <meta property="og:title" content="Layanan Pembuatan Sistem & POS Kustom UMKM | Digistack">
+    <meta property="og:description" content="Katalog lengkap layanan software custom & POS kasir sekali bayar tanpa langganan bulanan dari Digistack.">
+    <meta property="og:url" content="https://digistack.site/layanan.html">
+    <meta property="og:image" content="https://digistack.site/assets/portfolio/cafepos-pos.png">
+    <meta property="og:locale" content="id_ID">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cpath d='M15 25 L40 10 L65 25' stroke='%230284c7' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15 50 L40 35 L65 50' stroke='%230284c7' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15 75 L40 60 L65 75' stroke='%230284c7' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- STRUCTURED DATA: SCHEMA.ORG JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Beranda",
+              "item": "https://digistack.site/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Layanan",
+              "item": "https://digistack.site/layanan.html"
+            }
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "Layanan Pembuatan Sistem Digitalisasi UMKM Digistack",
+          "serviceType": "Custom Software Development",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Digistack",
+            "url": "https://digistack.site/"
+          },
+          "areaServed": "Indonesia",
+          "description": "Layanan pembuatan sistem kasir POS, otomatisasi WhatsApp Gateway, manajemen persediaan multi-cabang, dan sistem pembukuan kustom untuk UMKM Indonesia."
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --secondary: #0f172a;
+            --accent: #10b981;
+            --bg-light: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --radius: 14px;
+            --shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: var(--bg-light); color: var(--text-main); line-height: 1.65; }
+        a { text-decoration: none; color: inherit; }
+
+        /* NAVBAR */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(3, 105, 161, 0.96); backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15); z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .brand-logo { display: flex; align-items: center; gap: 0.9rem; }
+        .brand-title { font-weight: 800; font-size: 1.45rem; color: #ffffff; line-height: 1.1; }
+        .brand-title span { color: #38bdf8; }
+        .brand-tagline { font-weight: 700; font-size: 0.55rem; color: #bae6fd; letter-spacing: 1.5px; }
+        .nav-links { display: flex; gap: 1.8rem; align-items: center; list-style: none; }
+        .nav-links a { font-weight: 600; font-size: 0.95rem; color: #f0f9ff; transition: var(--transition); }
+        .nav-links a:hover, .nav-links a.active { color: #38bdf8; }
+        .btn-cyan {
+            background: #38bdf8; color: #0f172a; font-weight: 700;
+            padding: 0.65rem 1.4rem; border-radius: 99px; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-cyan:hover { background: #7dd3fc; transform: translateY(-2px); }
+
+        /* BREADCRUMB */
+        .breadcrumb-wrap {
+            padding: 7.5rem 2rem 1.5rem; max-width: 1200px; margin: 0 auto;
+        }
+        .breadcrumb { display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-muted); }
+        .breadcrumb a { color: var(--primary); font-weight: 600; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* HEADER HERO */
+        .page-header {
+            max-width: 1200px; margin: 0 auto 3.5rem; padding: 0 2rem; text-align: center;
+        }
+        .page-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: #e0f2fe; color: var(--primary); font-weight: 700;
+            font-size: 0.85rem; padding: 0.4rem 1.2rem; border-radius: 99px; margin-bottom: 1rem;
+        }
+        h1.page-title {
+            font-size: 2.5rem; font-weight: 800; color: var(--secondary);
+            margin-bottom: 1rem; line-height: 1.25;
+        }
+        h1.page-title span { color: var(--primary); }
+        .page-desc { max-width: 780px; margin: 0 auto; color: var(--text-muted); font-size: 1.05rem; }
+
+        /* SERVICE GRID */
+        .services-section { max-width: 1200px; margin: 0 auto 4rem; padding: 0 2rem; }
+        .service-card-lg {
+            background: var(--surface); border: 1px solid var(--border-color);
+            border-radius: var(--radius); padding: 3rem; margin-bottom: 2.5rem;
+            display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center;
+            box-shadow: var(--shadow); transition: var(--transition);
+        }
+        .service-card-lg:hover { border-color: var(--primary); transform: translateY(-3px); }
+        .service-card-lg.reversed { grid-template-columns: 1fr 1.2fr; }
+        .service-card-lg.reversed .service-info { order: 2; }
+        .service-card-lg.reversed .service-visual { order: 1; }
+        .service-icon-box {
+            width: 58px; height: 58px; background: #e0f2fe; color: var(--primary);
+            border-radius: 14px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; margin-bottom: 1.5rem;
+        }
+        .service-info h2 { font-size: 1.7rem; font-weight: 800; color: var(--secondary); margin-bottom: 1rem; }
+        .service-info p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1rem; }
+        .service-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+        .service-features li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; font-weight: 600; color: #334155; }
+        .service-features li i { color: var(--accent); font-size: 1rem; }
+        .service-visual img { width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+
+        /* COMPARISON TABLE */
+        .comparison-section { max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem; }
+        .table-wrap {
+            background: var(--surface); border: 1px solid var(--border-color);
+            border-radius: var(--radius); overflow-x: auto; box-shadow: var(--shadow);
+        }
+        table.comp-table { width: 100%; border-collapse: collapse; text-align: left; }
+        table.comp-table th, table.comp-table td { padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--border-color); }
+        table.comp-table th { background: #f1f5f9; font-weight: 700; color: var(--secondary); font-size: 0.95rem; }
+        table.comp-table th.highlight { background: #0284c7; color: #ffffff; }
+        table.comp-table td.highlight { background: #f0f9ff; font-weight: 600; color: #0369a1; }
+        table.comp-table tr:last-child td { border-bottom: none; }
+
+        /* CTA */
+        .cta-banner {
+            max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;
+        }
+        .cta-inner {
+            background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%);
+            border-radius: var(--radius); padding: 3.5rem 3rem; text-align: center; color: #ffffff;
+        }
+        .cta-inner h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
+        .cta-inner p { max-width: 650px; margin: 0 auto 2rem; color: #bae6fd; font-size: 1.05rem; }
+
+        /* FOOTER */
+        footer { background: var(--secondary); color: #94a3b8; padding: 2.5rem 2rem; text-align: center; font-size: 0.9rem; }
+
+        /* FLOATING WHATSAPP */
+        .floating-wa {
+            position: fixed; bottom: 2rem; right: 2rem; width: 62px; height: 62px;
+            background: #25d366; color: #ffffff; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 999; transition: var(--transition);
+        }
+        .floating-wa:hover { transform: scale(1.08); }
+
+        @media (max-width: 900px) {
+            .service-card-lg, .service-card-lg.reversed { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+            .service-card-lg.reversed .service-info { order: 1; }
+            .service-card-lg.reversed .service-visual { order: 2; }
+            .nav-links { display: none; }
+            h1.page-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">
+                <svg width="45" height="45" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 15 25 L 40 10 L 65 25" stroke="#38BDF8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 15 50 L 40 35 L 65 50" stroke="#60A5FA" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 15 75 L 40 60 L 65 75" stroke="#93C5FD" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="73" cy="10" r="5" fill="#10B981"/>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-title">DIGI<span>STACK</span></span>
+                    <span class="brand-tagline">SCALE UP YOUR BUSINESS</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="layanan.html" class="active">Layanan</a></li>
+                <li><a href="galeri.html">Portofolio</a></li>
+                <li><a href="index.html#harga">Harga Paket</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="compro.html">Tentang Kami</a></li>
+            </ul>
+            <a href="https://wa.me/6282371728447" class="btn-cyan js-wa-link" data-service="Konsultasi Layanan">
+                <i class="fa-brands fa-whatsapp"></i> Diskusi Sistem
+            </a>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Beranda</a>
+            <span><i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></span>
+            <span>Layanan</span>
+        </nav>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <span class="page-badge"><i class="fa-solid fa-cubes"></i> Solusi Digitalisasi Total</span>
+        <h1 class="page-title">Layanan Pembuatan Sistem & POS Kustom <span>UMKM Indonesia</span></h1>
+        <p class="page-desc">Bangun sistem operasional digital yang dirancang presisi mengikuti alur kerja bisnis Anda. Investasi sekali bayar, hak milik penuh, tanpa biaya langganan bulanan.</p>
+    </section>
+
+    <!-- MAIN SERVICES SECTION -->
+    <section class="services-section">
+        
+        <!-- Layanan 1: POS Kustom -->
+        <article class="service-card-lg">
+            <div class="service-info">
+                <div class="service-icon-box"><i class="fa-solid fa-cash-register"></i></div>
+                <h2>Sistem Point of Sale (POS) Kustom</h2>
+                <p>Aplikasi kasir pintar yang disesuaikan secara spesifik untuk alur usaha F&B (Cafe/Resto), Toko Retail, Butik Fashion, Laundry, hingga Grosir. Terintegrasi antar perangkat kasir, barista, dan dapur.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Kasir touchscreen multi-device (Tablet, PC, Android, iOS)</li>
+                    <li><i class="fa-solid fa-check"></i> Dukungan cetak printer thermal (Bluetooth/LAN/USB) & split bill</li>
+                    <li><i class="fa-solid fa-check"></i> Perhitungan resep & HPP bahan baku terpotong otomatis</li>
+                    <li><i class="fa-solid fa-check"></i> Scan barcode scanner cepat untuk ribuan SKU barang</li>
+                </ul>
+                <a href="https://wa.me/6282371728447" class="btn-cyan js-wa-link" data-service="Sistem POS Kustom">
+                    <i class="fa-brands fa-whatsapp"></i> Konsultasi POS Kustom
+                </a>
+            </div>
+            <div class="service-visual">
+                <picture>
+                    <source srcset="assets/portfolio/cafepos-pos.webp" type="image/webp">
+                    <img src="assets/portfolio/cafepos-pos.png" width="960" height="417" loading="lazy" alt="Sistem Kasir POS Kustom Digistack Cafe dan Resto">
+                </picture>
+            </div>
+        </article>
+
+        <!-- Layanan 2: Chatbot WhatsApp -->
+        <article class="service-card-lg reversed">
+            <div class="service-info">
+                <div class="service-icon-box" style="background:#dcfce7; color:#10b981;"><i class="fa-brands fa-whatsapp"></i></div>
+                <h2>Otomatisasi WhatsApp Gateway & Chatbot</h2>
+                <p>Hubungkan sistem kasir dan website toko Anda ke nomor WhatsApp resmi. Kirimkan invoice otomatis dan layani customer 24/7 tanpa perlu admin manual terus-menerus.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> E-Receipt dan nota transaksi otomatis terkirim via WhatsApp</li>
+                    <li><i class="fa-solid fa-check"></i> Chatbot auto-reply katalog menu, pricelist, dan cek status pesanan</li>
+                    <li><i class="fa-solid fa-check"></i> Notifikasi real-time order baru ke grup kasir dan tim operasional</li>
+                    <li><i class="fa-solid fa-check"></i> Broadcast promo dan pesan loyalitas pelanggan CRM</li>
+                </ul>
+                <a href="https://wa.me/6282371728447" class="btn-cyan js-wa-link" data-service="WhatsApp Gateway & Bot">
+                    <i class="fa-brands fa-whatsapp"></i> Tanya Solusi WhatsApp Bot
+                </a>
+            </div>
+            <div class="service-visual">
+                <picture>
+                    <source srcset="assets/portfolio/cafepos-login.webp" type="image/webp">
+                    <img src="assets/portfolio/cafepos-login.png" width="960" height="439" loading="lazy" alt="Integrasi Chatbot WhatsApp Gateway Digistack">
+                </picture>
+            </div>
+        </article>
+
+        <!-- Layanan 3: Manajemen Stok & Multi-Cabang -->
+        <article class="service-card-lg">
+            <div class="service-info">
+                <div class="service-icon-box" style="background:#fef3c7; color:#f59e0b;"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <h2>Manajemen Stok Gudang & Multi-Cabang</h2>
+                <p>Kendalikan pergerakan barang secara akurat di banyak cabang. Hilangkan selisih stok dan kebocoran barang dengan kartu stok otomatis dan otorisasi bertingkat.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Monitoring sisa stok gudang pusat & stok cabang real-time</li>
+                    <li><i class="fa-solid fa-check"></i> Fitur Transfer Stok (Stock Transfer Order) antar cabang</li>
+                    <li><i class="fa-solid fa-check"></i> Notifikasi otomatis saat stok mendekati batas minimum (Low Stock Alert)</li>
+                    <li><i class="fa-solid fa-check"></i> Pencatatan stock opname & riwayat mutasi barang transparan</li>
+                </ul>
+                <a href="https://wa.me/6282371728447" class="btn-cyan js-wa-link" data-service="Manajemen Stok & Cabang">
+                    <i class="fa-brands fa-whatsapp"></i> Diskusi Modul Inventori
+                </a>
+            </div>
+            <div class="service-visual">
+                <picture>
+                    <source srcset="assets/portfolio/glamstitch-stock.webp" type="image/webp">
+                    <img src="assets/portfolio/glamstitch-stock.png" width="960" height="436" loading="lazy" alt="Manajemen Stok Gudang Multi-Cabang Digistack">
+                </picture>
+            </div>
+        </article>
+
+        <!-- Layanan 4: Finance & Laporan Laba Rugi -->
+        <article class="service-card-lg reversed">
+            <div class="service-info">
+                <div class="service-icon-box" style="background:#f3e8ff; color:#9333ea;"><i class="fa-solid fa-chart-pie"></i></div>
+                <h2>Sistem Keuangan & Laporan Laba Rugi</h2>
+                <p>Kelola arus kas masuk dan keluar secara terstruktur. Dapatkan insight performa bisnis secara presisi melalui dashboard executive report tanpa perlu rekap excel manual berjam-jam.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Laporan Laba Rugi (P&L) harian, bulanan, dan tahunan otomatis</li>
+                    <li><i class="fa-solid fa-check"></i> Manajemen invoice piutang klien & rekonsiliasi pembelian supplier</li>
+                    <li><i class="fa-solid fa-check"></i> Integrasi pembayaran digital QRIS dan multi-metode bayar</li>
+                    <li><i class="fa-solid fa-check"></i> Dashboard konsolidasi omzet seluruh cabang langsung di HP Owner</li>
+                </ul>
+                <a href="https://wa.me/6282371728447" class="btn-cyan js-wa-link" data-service="Sistem Keuangan & Finance">
+                    <i class="fa-brands fa-whatsapp"></i> Konsultasi Sistem Keuangan
+                </a>
+            </div>
+            <div class="service-visual">
+                <picture>
+                    <source srcset="assets/portfolio/cafepos-report.webp" type="image/webp">
+                    <img src="assets/portfolio/cafepos-report.png" width="960" height="426" loading="lazy" alt="Executive Report Laporan Laba Rugi Digistack">
+                </picture>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- HEAD-TO-HEAD COMPARISON SECTION -->
+    <section class="comparison-section">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <span class="page-badge"><i class="fa-solid fa-scale-balanced"></i> Bandingkan & Hemat</span>
+            <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--secondary);">Sistem SaaS Langganan vs Sistem Kustom Digistack</h2>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 0.5rem auto 0;">Mengapa ribuan pemilik usaha mulai meninggalkan skema langganan bulanan yang memberatkan arus kas.</p>
+        </div>
+
+        <div class="table-wrap">
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th style="width: 28%;">Parameter Perbandingan</th>
+                        <th style="width: 36%;">Aplikasi Kasir Langganan (SaaS)</th>
+                        <th class="highlight" style="width: 36%;">Sistem Kustom Digistack</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Skema Pembayaran</strong></td>
+                        <td>Bayar per bulan / per tahun terus-menerus tanpa batas</td>
+                        <td class="highlight"><strong>Sekali Bayar (One-Time Payment)</strong> untuk selamanya</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Biaya Cabang Baru</strong></td>
+                        <td>Wajib bayar lisensi tambahan tiap ada outlet baru</td>
+                        <td class="highlight"><strong>Gratis / Fleksibel</strong>, software milik Anda sendiri</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kustomisasi Alur Usaha</strong></td>
+                        <td>Fitur kaku dan baku, tidak bisa diubah sesuai kebutuhan</td>
+                        <td class="highlight"><strong>100% Kustom</strong> sesuai alur kerja operasional Anda</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kepemilikan Data Bisnis</strong></td>
+                        <td>Data disimpan di server pihak ketiga (risiko privasi)</td>
+                        <td class="highlight"><strong>Hak Milik Anda 100%</strong>, database mandiri aman</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Integrasi Chatbot WhatsApp</strong></td>
+                        <td>Jarang tersedia atau biaya addon pihak ketiga sangat mahal</td>
+                        <td class="highlight"><strong>Terintegrasi Langsung</strong> ke WhatsApp Gateway resmi</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Biaya 3 Tahun (3 Cabang)</strong></td>
+                        <td>Bisa mencapai Rp18.000.000 – Rp36.000.000+</td>
+                        <td class="highlight"><strong>Mulai Rp1.999.000 sekali bayar</strong> (Hemat puluhan juta)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="cta-inner">
+            <h2>Siap Mendigitalkan Bisnis Anda Tanpa Biaya Bulanan?</h2>
+            <p>Diskusikan kebutuhan operasional usaha Anda bersama konsultan sistem Digistack. Kami berikan rekomendasi solusi dan demo gratis tanpa komitmen.</p>
+            <a href="https://wa.me/6282371728447" class="btn-cyan js-wa-link" data-service="Konsultasi & Live Demo Layanan" style="font-size: 1.05rem; padding: 0.9rem 2.2rem;">
+                <i class="fa-brands fa-whatsapp"></i> Hubungi Konsultan Digistack Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Digistack. All rights reserved. Solusi Digitalisasi Total & Sistem Kustom UMKM Indonesia.</p>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/6282371728447" class="floating-wa js-wa-link" data-service="Floating WhatsApp Layanan" title="Hubungi Kami di WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- MAIN SCRIPT -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
