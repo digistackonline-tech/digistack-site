@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Deck Digistack - Solusi Sistem Kustom UMKM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --primary-light: #e0f2fe;
+            --secondary: #0f172a;
+            --navy-surface: #1e293b;
+            --accent: #10b981;
+            --accent-gold: #f59e0b;
+            --gold-light: #fef3c7;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --bg-page: #f8fafc;
+            --border-color: #e2e8f0;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+        }
+
+        @page {
+            size: 210mm 297mm; /* A4 Portrait */
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            background-color: #334155;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .slide {
+            width: 210mm;
+            height: 297mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            padding: 16mm 16mm 14mm 16mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            page-break-after: always;
+            break-after: page;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+                gap: 0;
+            }
+            .slide {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+
+        /* HEADER & FOOTER SLIDE */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 3.5mm;
+            margin-bottom: 4mm;
+        }
+
+        .slide-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .slide-brand-logo {
+            height: 32px;
+            width: auto;
+            display: block;
+        }
+
+        .slide-category {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 4px 12px;
+            border-radius: 99px;
+        }
+
+        .slide-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 3.5mm;
+            font-size: 0.73rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .slide-footer strong {
+            color: var(--secondary);
+        }
+
+        .slide-footer-contact {
+            display: flex;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .slide-footer-contact span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .slide-footer-contact i {
+            color: var(--primary);
+        }
+
+        /* SLIDE 1: COVER */
+        .slide.cover {
+            background: linear-gradient(135deg, #091322 0%, #0f172a 60%, #0369a1 100%);
+            color: #ffffff;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 22mm 18mm 18mm 18mm;
+            position: relative;
+        }
+
+        .cover-decor {
+            position: absolute;
+            right: -60px;
+            bottom: -60px;
+            width: 520px;
+            height: 520px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(3, 105, 161, 0) 70%);
+            pointer-events: none;
+        }
+
+        .cover-logo-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .cover-logo-img {
+            height: 60px;
+            width: auto;
+            display: block;
+            filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.4));
+        }
+
+        .cover-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            color: #7dd3fc;
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+        }
+
+        .cover-title {
+            font-size: 1.82rem;
+            font-weight: 800;
+            line-height: 1.30;
+            letter-spacing: -0.4px;
+            margin-bottom: 16px;
+            max-width: 100%;
+        }
+
+        .cover-title span {
+            color: #38bdf8;
+        }
+
+        .cover-title .highlight-gold {
+            color: #facc15;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .cover-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #e2e8f0;
+            max-width: 100%;
+            margin-bottom: 24px;
+        }
+
+        .cover-usp-pills {
+            display: flex;
+            gap: 9px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .usp-pill {
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            backdrop-filter: blur(8px);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+        }
+
+        .usp-pill i {
+            color: #38bdf8;
+            font-size: 0.90rem;
+        }
+
+        .usp-pill.pill-mkt {
+            background: rgba(245, 158, 11, 0.16);
+            border: 1px solid rgba(245, 158, 11, 0.40);
+        }
+
+        .usp-pill.pill-mkt i {
+            color: #facc15;
+        }
+
+        .cover-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            padding-top: 18px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .cover-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .meta-val {
+            font-size: 0.88rem;
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        /* TYPOGRAPHY FOR INSIDE SLIDES */
+        .slide-heading {
+            margin-bottom: 5mm;
+        }
+
+        .slide-heading h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+
+        .slide-heading h2 span {
+            color: var(--primary);
+        }
+
+        .slide-heading p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        /* GRID LAYOUTS */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            flex-grow: 1;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            flex-grow: 1;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            flex-grow: 1;
+        }
+
+        /* CARD STACK (FOR PORTRAIT SLIDE 2) */
+        .card-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 18px;
+            flex-grow: 1;
+        }
+
+        .card-row {
+            background: var(--bg-page);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 18px 20px;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+        }
+
+        .card-row .card-icon {
+            margin-bottom: 0;
+            flex-shrink: 0;
+        }
+
+        /* CARDS */
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 18px 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+            position: relative;
+        }
+
+        .card-alt {
+            background: var(--bg-page);
+        }
+
+        .card-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+
+        .icon-blue { background: #e0f2fe; color: var(--primary); }
+        .icon-green { background: #dcfce7; color: var(--accent); }
+        .icon-gold { background: var(--gold-light); color: var(--accent-gold); }
+        .icon-red { background: #fee2e2; color: #ef4444; }
+        .icon-purple { background: #f3e8ff; color: #9333ea; }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* PROBLEM SLIDE STYLING */
+        .problem-card {
+            border-left: 4px solid #ef4444;
+            background: #fff;
+            padding: 20px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .problem-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #ef4444;
+            margin-bottom: 4px;
+            letter-spacing: 0.8px;
+        }
+
+        .problem-impact {
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #991b1b;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* SOLUTION TABLE STYLING */
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.83rem;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .comp-table th {
+            padding: 11px 14px;
+            background: #f1f5f9;
+            color: var(--secondary);
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .comp-table th.col-digistack {
+            background: #0284c7;
+            color: #ffffff;
+        }
+
+        .comp-table td {
+            padding: 11px 14px;
+            border-bottom: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+
+        .comp-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comp-table td.col-digistack {
+            background: #f0f9ff;
+            font-weight: 600;
+            color: #0369a1;
+        }
+
+        .comp-table td.col-saas {
+            color: #64748b;
+        }
+
+        /* SERVICE SHOWCASE */
+        .service-box {
+            display: flex;
+            gap: 14px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 16px 18px;
+            align-items: flex-start;
+        }
+
+        .service-box .card-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            margin-bottom: 0;
+        }
+
+        .service-box-body h4 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .service-box-body p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .service-features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .service-features-list li {
+            font-size: 0.73rem;
+            font-weight: 600;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            line-height: 1.3;
+        }
+
+        .service-features-list li i {
+            color: var(--accent);
+            font-size: 0.72rem;
+        }
+
+        /* CLIENT LOGO SHOWCASE SLIDE (PORTRAIT: 3 ROW 1 + 2 CENTERED ROW 2) */
+        .client-grid-portrait {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .client-grid-portrait .client-logo-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 16px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+        }
+
+        .client-grid-portrait .client-logo-card:nth-child(1),
+        .client-grid-portrait .client-logo-card:nth-child(2),
+        .client-grid-portrait .client-logo-card:nth-child(3) {
+            grid-column: span 2;
+        }
+
+        .client-grid-portrait .client-logo-card:nth-child(4) {
+            grid-column: 2 / span 2;
+        }
+
+        .client-grid-portrait .client-logo-card:nth-child(5) {
+            grid-column: 4 / span 2;
+        }
+
+        .client-grid-portrait .client-logo-wrapper {
+            width: 100%;
+            height: 95px;
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.02);
+        }
+
+        .client-grid-portrait .client-logo-wrapper img {
+            max-width: 90%;
+            max-height: 75px;
+            object-fit: contain;
+        }
+
+        .client-grid-portrait .client-name {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 0;
+            line-height: 1.25;
+        }
+
+        .client-trust-summary {
+            margin-top: 16px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #f8fafc 100%);
+            border: 1.5px solid #bae6fd;
+            border-radius: 12px;
+            padding: 12px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82rem;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .trust-item i {
+            font-size: 1.05rem;
+        }
+
+        /* PRICING SLIDE (PORTRAIT) */
+        .pricing-hero-container {
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #fef3c7 100%);
+            border: 2px solid var(--primary);
+            border-radius: 18px;
+            padding: 18px 20px;
+            box-shadow: 0 10px 30px rgba(2, 132, 199, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .pricing-left {
+            width: 100%;
+        }
+
+        .pricing-right {
+            width: 100%;
+            border-left: none;
+            border-top: 1.5px dashed #cbd5e1;
+            padding-left: 0;
+            padding-top: 14px;
+        }
+
+        .price-badge-exclusive {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #0284c7;
+            color: #ffffff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 99px;
+            margin-bottom: 8px;
+        }
+
+        .price-big-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .price-amount {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: #0369a1;
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+
+        .price-amount small {
+            font-size: 1.0rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .price-subtitle {
+            font-size: 0.85rem;
+            color: #15803d;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .feature-grid-check {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 14px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: #334155;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        .check-item i {
+            color: #10b981;
+            margin-top: 2px;
+            font-size: 0.82rem;
+            flex-shrink: 0;
+        }
+
+        .pricing-guarantee-row {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .guarantee-box {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .guarantee-box i {
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        .guarantee-box strong {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--secondary);
+            margin-bottom: 2px;
+        }
+
+        .guarantee-box span {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        /* SLIDE: DIGITAL MARKETING PACKAGES (3 EQUAL GRADIENT BUBBLES) */
+        .mkt-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 12px;
+            align-items: stretch;
+        }
+
+        .mkt-card {
+            border-radius: 14px;
+            padding: 16px 11px 13px 11px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        /* 1. BUBBLE KIRI: GOOGLE & META ADS (Gradasi Cyan / Emerald) */
+        .mkt-card.card-ads {
+            background: linear-gradient(160deg, #ecfdf5 0%, #ffffff 42%, #e0f2fe 100%);
+            border: 2px solid #06b6d4;
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.12);
+        }
+
+        .mkt-card.card-ads .mkt-price {
+            color: #0891b2;
+        }
+
+        .mkt-card.card-ads .mkt-discount-pill {
+            background: #cffafe;
+            color: #0e7490;
+            border: 1px solid rgba(6, 182, 212, 0.35);
+        }
+
+        .mkt-card.card-ads .mkt-feature-list li i.fa-circle-check {
+            color: #0891b2;
+        }
+
+        /* 2. BUBBLE TENGAH: BASIC (Gradasi Royal Blue / Sapphire) */
+        .mkt-card.card-basic {
+            background: linear-gradient(160deg, #eff6ff 0%, #ffffff 42%, #e0e7ff 100%);
+            border: 2px solid #0284c7;
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.12);
+        }
+
+        .mkt-card.card-basic .mkt-price {
+            color: #0284c7;
+        }
+
+        .mkt-card.card-basic .mkt-discount-pill {
+            background: #dcfce7;
+            color: #15803d;
+            border: 1px solid rgba(22, 163, 74, 0.3);
+        }
+
+        .mkt-card.card-basic .mkt-feature-list li i.fa-circle-check {
+            color: #0284c7;
+        }
+
+        /* 3. BUBBLE KANAN: ENTERPRISE (Gradasi Midnight Navy & Gold) */
+        .mkt-card.card-enterprise {
+            background: linear-gradient(160deg, #0f172a 0%, #1e293b 55%, #0c4a6e 100%);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+            color: #ffffff;
+        }
+
+        .mkt-card.card-enterprise .mkt-title {
+            color: #ffffff;
+        }
+
+        .mkt-card.card-enterprise .mkt-price {
+            color: #38bdf8;
+        }
+
+        .mkt-card.card-enterprise .mkt-price small {
+            color: #94a3b8;
+        }
+
+        .mkt-card.card-enterprise .mkt-discount-pill {
+            background: rgba(245, 158, 11, 0.18);
+            color: #fcd34d;
+            border: 1px solid rgba(245, 158, 11, 0.35);
+        }
+
+        .mkt-card.card-enterprise .mkt-feature-list li {
+            color: #e2e8f0;
+        }
+
+        .mkt-card.card-enterprise .mkt-feature-list li i.fa-circle-check {
+            color: #10b981;
+        }
+
+        .mkt-badge-top {
+            position: absolute;
+            top: -10px;
+            right: 12px;
+            background: #f59e0b;
+            color: #0f172a;
+            font-size: 0.60rem;
+            font-weight: 800;
+            padding: 2.5px 8px;
+            border-radius: 99px;
+            letter-spacing: 0.4px;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+        }
+
+        .mkt-badge-top.badge-cyan {
+            background: #06b6d4;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(6, 182, 212, 0.4);
+        }
+
+        .mkt-badge-top.badge-blue {
+            background: #0284c7;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+        }
+
+        .mkt-header-box {
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+            padding-bottom: 7px;
+            margin-bottom: 8px;
+        }
+
+        .mkt-card.card-enterprise .mkt-header-box {
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+        }
+
+        .mkt-title {
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: var(--secondary);
+            height: 22px;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.2px;
+        }
+
+        .mkt-price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-top: 3px;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .mkt-price small {
+            font-size: 0.70rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        .mkt-pill-wrapper {
+            height: 34px;
+            display: flex;
+            align-items: center;
+        }
+
+        .mkt-discount-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.63rem;
+            font-weight: 700;
+            padding: 2.5px 7px;
+            border-radius: 6px;
+            line-height: 1.25;
+            letter-spacing: 0.1px;
+        }
+
+        .mkt-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            flex-grow: 1;
+        }
+
+        .mkt-feature-list li {
+            font-size: 0.68rem;
+            color: #334155;
+            font-weight: 600;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            line-height: 1.32;
+        }
+
+        .mkt-feature-list li i {
+            font-size: 0.70rem;
+            margin-top: 1.5px;
+            flex-shrink: 0;
+        }
+
+        .mkt-feature-list li i.fa-star {
+            color: #f59e0b;
+            font-size: 0.70rem;
+        }
+
+        /* WEB DESIGN BANNER ON SLIDE 8 */
+        .mkt-web-banner {
+            margin-top: 12px;
+            background: linear-gradient(135deg, #091322 0%, #0f172a 60%, #0369a1 100%);
+            border: 1.5px solid #38bdf8;
+            border-radius: 14px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            box-shadow: 0 4px 18px rgba(3, 105, 161, 0.16);
+            color: #ffffff;
+        }
+
+        .web-banner-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .web-banner-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: rgba(56, 189, 248, 0.18);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.0rem;
+            color: #38bdf8;
+            flex-shrink: 0;
+        }
+
+        .web-banner-info h4 {
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0 0 2px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .web-banner-info h4 span.badge-sekali-bayar {
+            background: #0284c7;
+            font-size: 0.55rem;
+            font-weight: 800;
+            padding: 3.5px 9px;
+            border-radius: 99px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.15;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(2, 132, 199, 0.4);
+        }
+
+        .web-banner-info h4 span.badge-sekali-bayar span {
+            background: none;
+            padding: 0;
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            letter-spacing: inherit;
+            line-height: 1.15;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+
+        .web-banner-info p {
+            font-size: 0.68rem;
+            color: #cbd5e1;
+            margin: 0;
+            line-height: 1.25;
+        }
+
+        .web-banner-pills {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .web-service-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 2px 7px;
+            border-radius: 6px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #e0f2fe;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+
+        .web-service-pill i {
+            color: #38bdf8;
+            font-size: 0.62rem;
+        }
+
+        .web-banner-price-box {
+            text-align: right;
+            padding-left: 12px;
+            border-left: 1px dashed rgba(255, 255, 255, 0.2);
+            flex-shrink: 0;
+        }
+
+        .web-banner-price-box .lbl {
+            font-size: 0.62rem;
+            color: #94a3b8;
+            font-weight: 600;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .web-banner-price-box .price {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #facc15;
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+
+        /* SLIDE: STEPS & CONTACT */
+        .step-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .step-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px 14px;
+            position: relative;
+        }
+
+        .step-num {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #e2e8f0;
+            line-height: 1;
+        }
+
+        .step-card h4 {
+            font-size: 0.90rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-top: 6px;
+            margin-bottom: 4px;
+        }
+
+        .step-card p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .cta-action-box {
+            background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%);
+            border-radius: 16px;
+            padding: 16px 20px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cta-action-left h3 {
+            font-size: 1.22rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+            color: #ffffff;
+        }
+
+        .cta-action-left p {
+            font-size: 0.82rem;
+            color: #bae6fd;
+            line-height: 1.35;
+        }
+
+        .cta-contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .contact-pill-card {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 10px 14px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-pill-card i {
+            font-size: 1.3rem;
+            color: #38bdf8;
+        }
+
+        .contact-pill-card .lbl {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            color: #cbd5e1;
+            letter-spacing: 0.5px;
+            display: block;
+        }
+
+        .contact-pill-card .val {
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         SLIDE 1: COVER
+         ========================================================================== -->
+    <section class="slide cover">
+        <div class="cover-decor"></div>
+        <div>
+            <!-- LOGO DIGISTACK BESAR DI PALING ATAS -->
+            <div class="cover-logo-wrapper">
+                <img src="assets/digistack-logo-white.png" alt="Digistack Logo" class="cover-logo-img">
+            </div>
+
+            <h1 class="cover-title">
+                Sistem Operasional Kustom &amp; <span class="highlight-gold">Digital Marketing</span><br>
+                <span>Sistem Sekali Bayar</span>, <span class="highlight-gold">Pemasaran Tepat Sasaran</span>
+            </h1>
+            <p class="cover-desc">
+                Solusi menyeluruh dari hulu ke hilir: merapikan operasional transaksi, stok gudang, dan pembukuan dengan sistem kustom bebas biaya bulanan — sekaligus melipatgandakan omzet lewat Google Ads, Meta Ads, website profesional, dan manajemen media sosial.
+            </p>
+            <div class="cover-usp-pills">
+                <div class="usp-pill"><i class="fa-solid fa-infinity"></i> Bebas Biaya Bulanan Sistem</div>
+                <div class="usp-pill"><i class="fa-solid fa-sliders"></i> Alur Sistem 100% Kustom</div>
+                <div class="usp-pill"><i class="fa-solid fa-shield-halved"></i> Data 100% Milik Sendiri</div>
+                <div class="usp-pill pill-mkt"><i class="fa-solid fa-bullhorn"></i> Iklan Terarah Google &amp; Meta Ads</div>
+                <div class="usp-pill pill-mkt"><i class="fa-solid fa-chart-line"></i> Branding &amp; Kelola Konten Sosmed</div>
+            </div>
+        </div>
+        <div class="cover-meta">
+            <div class="cover-meta-item">
+                <span class="meta-label">Dipersiapkan Oleh</span>
+                <span class="meta-val">Digistack (CV Digital Karya Indonesia)</span>
+            </div>
+            <div class="cover-meta-item">
+                <span class="meta-label">Kantor Pusat</span>
+                <span class="meta-val">Jl Gadjah Magersari no 134, Magersari - Sidoarjo</span>
+            </div>
+            <div class="cover-meta-item">
+                <span class="meta-label">Wilayah Layanan</span>
+                <span class="meta-val">Seluruh Indonesia (Remote &amp; Online)</span>
+            </div>
+            <div class="cover-meta-item">
+                <span class="meta-label">Website Resmi</span>
+                <span class="meta-val">digistack.site</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 2: PERKENALAN DIGISTACK
+         ========================================================================== -->
+    <section class="slide">
+        <div>
+            <div class="slide-header">
+                <div class="slide-brand">
+                    <img src="assets/digistack-logo.png" alt="Digistack" class="slide-brand-logo">
+                </div>
+                <span class="slide-category">Tentang Digistack</span>
+            </div>
+
+            <div class="slide-heading">
+                <h2>Teknologi yang <span>Mengikuti Alur Bisnis Anda,</span> Bukan Sebaliknya</h2>
+                <p>Kami membantu pelaku usaha naik kelas dengan sistem software yang praktis, mudah digunakan staf, dan bebas beban bulanan.</p>
+            </div>
+
+            <div class="card-stack">
+                <div class="card-row">
+                    <div class="card-icon icon-blue"><i class="fa-solid fa-handshake"></i></div>
+                    <div>
+                        <div class="card-title">Siapa Kami?</div>
+                        <div class="card-desc">
+                            Digistack di bawah naungan <strong>CV Digital Karya Indonesia</strong> adalah mitra teknologi dan akselerasi bisnis bagi UMKM Indonesia. Kami menghadirkan sistem operasional kustom, pembuatan website profesional, serta digital marketing terarah.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-row">
+                    <div class="card-icon icon-gold"><i class="fa-solid fa-compass-drafting"></i></div>
+                    <div>
+                        <div class="card-title">Filosofi Utama</div>
+                        <div class="card-desc">
+                            Setiap bisnis punya cara kerja yang unik. Software pasaran seringkali terlalu kaku dan membingungkan karyawan. Kami membangun sistem yang 100% pas dan nyaman mengikuti alur kerja tim Anda.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-row">
+                    <div class="card-icon icon-green"><i class="fa-solid fa-lock-open"></i></div>
+                    <div>
+                        <div class="card-title">Bebas Jebakan Langganan</div>
+                        <div class="card-desc">
+                            Prinsip kami jelas: <strong>One-Time Investment</strong>. Anda membayar sekali untuk sistem operasional, software dan data menjadi aset milik Anda seutuhnya tanpa ancaman tagihan bulanan.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUOTE BANNER -->
+            <div style="background: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; margin-top: 20px;">
+                <i class="fa-solid fa-quote-left" style="font-size: 1.8rem; color: #0284c7; flex-shrink: 0;"></i>
+                <div>
+                    <div style="font-size: 0.95rem; color: #0369a1; font-weight: 800; line-height: 1.4; margin-bottom: 3px;">
+                        &ldquo;Not just software, but your strategic tech-partner to scale up.&rdquo;
+                    </div>
+                    <div style="font-size: 0.85rem; color: #475569; font-weight: 600; line-height: 1.45;">
+                        Bukan sekadar penyedia software, melainkan mitra teknologi strategis untuk tumbuh dan naik kelas.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Digistack - CV Digital Karya Indonesia</span>
+            <div class="slide-footer-contact">
+                <span><i class="fa-brands fa-whatsapp"></i> 0823-7172-8447</span>
+                <span><i class="fa-solid fa-globe"></i> digistack.site</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 3: MASALAH YANG DISELESAIKAN
+         ========================================================================== -->
+    <section class="slide">
+        <div>
+            <div class="slide-header">
+                <div class="slide-brand">
+                    <img src="assets/digistack-logo.png" alt="Digistack" class="slide-brand-logo">
+                </div>
+                <span class="slide-category">Problem Solver</span>
+            </div>
+
+            <div class="slide-heading">
+                <h2>4 Masalah Sistem &amp; Operasional yang <span>Menguras Biaya &amp; Energi</span></h2>
+                <p>Banyak pelaku usaha terjebak software template kaku dan beban langganan yang terus menggerus profit bisnis.</p>
+            </div>
+
+            <div class="grid-2" style="margin-top: 14px;">
+                <div class="card problem-card">
+                    <div class="problem-badge"><i class="fa-solid fa-triangle-exclamation"></i> Masalah 1</div>
+                    <div class="card-title">Jebakan Biaya Langganan</div>
+                    <div class="card-desc">
+                        Software pasaran menagih lisensi per bulan, per cabang, dan per user. Seiring bisnis bertumbuh, beban biaya tahunan melonjak puluhan juta rupiah tanpa pernah menjadi aset milik Anda.
+                    </div>
+                    <div class="problem-impact"><i class="fa-solid fa-arrow-trend-down"></i> Arus kas tergerus &amp; biaya tak berujung</div>
+                </div>
+
+                <div class="card problem-card">
+                    <div class="problem-badge"><i class="fa-solid fa-triangle-exclamation"></i> Masalah 2</div>
+                    <div class="card-title">Fitur Kaku &amp; Alur Usaha Terpaksa Mengalah</div>
+                    <div class="card-desc">
+                        Aplikasi pasaran memaksakan template kaku. Alur pesanan khusus, multi-satuan grosir, skema sewa, atau variasi produk tidak bisa disesuaikan, membuat tim kerja bingung dan sering salah catat.
+                    </div>
+                    <div class="problem-impact"><i class="fa-solid fa-triangle-exclamation"></i> Operasional lambat &amp; rawan salah input</div>
+                </div>
+
+                <div class="card problem-card">
+                    <div class="problem-badge"><i class="fa-solid fa-triangle-exclamation"></i> Masalah 3</div>
+                    <div class="card-title">Rekap Manual &amp; Selisih Stok Misterius</div>
+                    <div class="card-desc">
+                        Owner masih harus mencocokkan nota fisik dan rekap Excel berjam-jam tiap malam. Stok gudang dan fisik sering bocor atau selisih tanpa jejak audit transaksi yang jelas.
+                    </div>
+                    <div class="problem-impact"><i class="fa-solid fa-clock-rotate-left"></i> Waktu terbuang &amp; rawan kebocoran omzet</div>
+                </div>
+
+                <div class="card problem-card">
+                    <div class="problem-badge"><i class="fa-solid fa-triangle-exclamation"></i> Masalah 4</div>
+                    <div class="card-title">Data Usaha &amp; Pelanggan Tersandera</div>
+                    <div class="card-desc">
+                        Database pelanggan, formula produk, dan riwayat laba rugi disimpan di server pihak ketiga. Jika Anda telat atau berhenti bayar, akses data penting usaha Anda berisiko terkunci.
+                    </div>
+                    <div class="problem-impact"><i class="fa-solid fa-lock"></i> Ketergantungan total &amp; privasi tak aman</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Digistack - CV Digital Karya Indonesia</span>
+            <div class="slide-footer-contact">
+                <span><i class="fa-brands fa-whatsapp"></i> 0823-7172-8447</span>
+                <span><i class="fa-solid fa-globe"></i> digistack.site</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 4: KEUNGGULAN DIGISTACK
+         ========================================================================== -->
+    <section class="slide">
+        <div>
+            <div class="slide-header">
+                <div class="slide-brand">
+                    <img src="assets/digistack-logo.png" alt="Digistack" class="slide-brand-logo">
+                </div>
+                <span class="slide-category">Keunggulan Kami</span>
+            </div>
+
+            <div class="slide-heading">
+                <h2>Mengapa Memilih <span>Digistack Kustom</span> Dibanding Software Pasaran?</h2>
+                <p>Perbandingan nyata antara sistem aplikasi langganan umum dengan solusi kustom mandiri dari Digistack.</p>
+            </div>
+
+            <div style="margin-top: 10px;">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 28%;">Kriteria Pembanding</th>
+                            <th style="width: 36%;">Software Langganan (SaaS Pasaran)</th>
+                            <th class="col-digistack" style="width: 36%;"><i class="fa-solid fa-crown" style="color: #facc15;"></i> Sistem Kustom Digistack</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Model Pembayaran</strong></td>
+                            <td class="col-saas">Bayar per bulan / per tahun selamanya tanpa henti</td>
+                            <td class="col-digistack"><i class="fa-solid fa-check-circle" style="color:#10b981;"></i> <strong>Sekali Bayar (One-Time)</strong>, milik Anda selamanya</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Biaya Tambah Cabang</strong></td>
+                            <td class="col-saas">Wajib bayar lisensi tambahan untuk tiap outlet baru</td>
+                            <td class="col-digistack"><i class="fa-solid fa-check-circle" style="color:#10b981;"></i> <strong>Fleksibel & Hemat</strong>, bebas skala ekspansi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Penyesuaian Alur Fitur</strong></td>
+                            <td class="col-saas">Kaku, tidak bisa request tombol atau rumus hitungan khusus</td>
+                            <td class="col-digistack"><i class="fa-solid fa-check-circle" style="color:#10b981;"></i> <strong>100% Kustom</strong> sesuai alur kerja operasional Anda</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kepemilikan Data</strong></td>
+                            <td class="col-saas">Data tersimpan di cloud pihak ketiga (risiko privasi)</td>
+                            <td class="col-digistack"><i class="fa-solid fa-check-circle" style="color:#10b981;"></i> <strong>Database Terisolasi</strong>, 100% hak milik Anda</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Garansi & Pendampingan</strong></td>
+                            <td class="col-saas">CS tiket lambat, tidak ada garansi kustom alur usaha</td>
+                            <td class="col-digistack"><i class="fa-solid fa-check-circle" style="color:#10b981;"></i> <strong>Garansi 1 Tahun Penuh</strong> & pendampingan teknis langsung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dukungan Perangkat</strong></td>
+                            <td class="col-saas">Seringkali wajib beli hardware khusus dari vendor</td>
+                            <td class="col-digistack"><i class="fa-solid fa-check-circle" style="color:#10b981;"></i> <strong>Bisa Pakai Alat yang Ada</strong> (HP, Tablet, PC, Laptop)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Digistack - CV Digital Karya Indonesia</span>
+            <div class="slide-footer-contact">
+                <span><i class="fa-brands fa-whatsapp"></i> 0823-7172-8447</span>
+                <span><i class="fa-solid fa-globe"></i> digistack.site</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 5: LAYANAN UTAMA DIGISTACK
+         ========================================================================== -->
+    <section class="slide">
+        <div>
+            <div class="slide-header">
+                <div class="slide-brand">
+                    <img src="assets/digistack-logo.png" alt="Digistack" class="slide-brand-logo">
+                </div>
+                <span class="slide-category">Layanan Kami</span>
+            </div>
+
+            <div class="slide-heading">
+                <h2>Solusi Lengkap <span>Sesuai Kebutuhan Sektor Bisnis</span> Anda</h2>
+                <p>Seluruh modul saling terhubung dalam satu dashboard terpadu yang mudah dipelajari siapa saja.</p>
+            </div>
+
+            <div class="grid-2" style="margin-top: 10px;">
+                <div class="service-box">
+                    <div class="card-icon icon-blue"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="service-box-body">
+                        <h4>1. Sistem Operasional &amp; Transaksi Kustom</h4>
+                        <p>Pencatatan transaksi cepat untuk Usaha Retail, Grosir, F&amp;B, Jasa, Manufaktur &amp; Rental. Tampilan simpel, anti-lemot, dan siap cetak invoice/struk.</p>
+                        <ul class="service-features-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Dukungan Transaksi Multi-Cabang &amp; Multi-User</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Scan Barcode Cepat (Ribuan SKU Produk)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Potong Stok Bahan / Komponen Otomatis</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Support Multi Level Akses &amp; Shift Kerja Tim</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <div class="card-icon icon-green"><i class="fa-solid fa-users"></i></div>
+                    <div class="service-box-body">
+                        <h4>2. Manajemen Pelanggan, Diskon &amp; CRM</h4>
+                        <p>Kelola data pelanggan setia, level diskon khusus, dan program poin loyalitas untuk meningkatkan transaksi berulang (repeat order).</p>
+                        <ul class="service-features-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Database Riwayat Transaksi Pelanggan</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Skema Diskon Khusus, VIP &amp; Grosir</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Program Poin Loyalitas &amp; Voucher Belanja</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Ekspor Data Pelanggan Mandiri (Hak Milik)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <div class="card-icon icon-gold"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <div class="service-box-body">
+                        <h4>3. Kontrol Stok Gudang &amp; Multi-Cabang</h4>
+                        <p>Pantau persediaan barang di toko dan gudang secara real-time. Hilangkan risiko stok habis saat pelanggan ingin membeli.</p>
+                        <ul class="service-features-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Kartu Stok &amp; Riwayat Mutasi Otomatis</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Peringatan Stok Menipis (Low Stock Alert)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Transfer Stok Antar Cabang Terpantau</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Fitur Stock Opname Fisik Cepat</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <div class="card-icon icon-purple"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="service-box-body">
+                        <h4>4. Laporan Keuangan &amp; Executive Report</h4>
+                        <p>Ketahui omzet, margin keuntungan bersih, dan rekap pembayaran (QRIS, Tunai, Transfer) langsung di HP Anda kapan saja.</p>
+                        <ul class="service-features-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Laporan Laba Rugi (P&amp;L) Otomatis</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Tutup Buku Harian Hitungan Menit</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Pembuatan Invoice PPN 11% Otomatis</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Pantau Seluruh Cabang dari 1 HP Owner</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Digistack - CV Digital Karya Indonesia</span>
+            <div class="slide-footer-contact">
+                <span><i class="fa-brands fa-whatsapp"></i> 0823-7172-8447</span>
+                <span><i class="fa-solid fa-globe"></i> digistack.site</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 6: BUKTI IMPLEMENTASI & PORTOFOLIO
+         ========================================================================== -->
+    <section class="slide">
+        <div>
+            <div class="slide-header">
+                <div class="slide-brand">
+                    <img src="assets/digistack-logo.png" alt="Digistack" class="slide-brand-logo">
+                </div>
+                <span class="slide-category">Klien & Portofolio</span>
+            </div>
+
+            <div class="slide-heading">
+                <h2>Klien & Mitra Kami — <span>Telah Dipercaya Berbagai Industri</span></h2>
+                <p>Digistack dipercaya oleh bisnis berkembang di berbagai sektor untuk membangun sistem operasional kustom yang efisien dan andal.</p>
+            </div>
+
+            <!-- 5 CLIENT LOGO CARDS -->
+            <div class="client-grid-portrait">
+                <!-- 1: Belia Cosmetics -->
+                <div class="client-logo-card">
+                    <div class="client-logo-wrapper">
+                        <img src="assets/clients/belia-cosmetics.jpg" alt="Belia Cosmetics">
+                    </div>
+                    <div class="client-name">Belia Cosmetics</div>
+                </div>
+
+                <!-- 2: Metaplus Perkasa -->
+                <div class="client-logo-card">
+                    <div class="client-logo-wrapper">
+                        <img src="assets/clients/metaplus-perkasa.png" alt="Metaplus Perkasa">
+                    </div>
+                    <div class="client-name">Metaplus Perkasa</div>
+                </div>
+
+                <!-- 3: Bisa Advertising -->
+                <div class="client-logo-card">
+                    <div class="client-logo-wrapper">
+                        <img src="assets/clients/bisa-advertising.webp" alt="Bisa Advertising">
+                    </div>
+                    <div class="client-name">Bisa Advertising</div>
+                </div>
+
+                <!-- 4: Wiguna Tenda -->
+                <div class="client-logo-card">
+                    <div class="client-logo-wrapper">
+                        <img src="assets/clients/wiguna-tenda.jpg" alt="Wiguna Tenda">
+                    </div>
+                    <div class="client-name">Wiguna Tenda</div>
+                </div>
+
+                <!-- 5: De Flor -->
+                <div class="client-logo-card">
+                    <div class="client-logo-wrapper">
+                        <img src="assets/clients/de-flor.png" alt="De Flor">
+                    </div>
+                    <div class="client-name">De Flor</div>
+                </div>
+            </div>
+
+            <!-- TRUST SUMMARY BAR -->
+            <div class="client-trust-summary">
+                <div class="trust-item">
+                    <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
+                    <span><strong>Lintas Sektor:</strong> Teruji di Retail, Manufaktur, Jasa Cetak &amp; Kreatif</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fa-solid fa-shield-halved" style="color: #0284c7;"></i>
+                    <span><strong>100% Hak Milik:</strong> Database mandiri &amp; aman di server sendiri</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fa-solid fa-star" style="color: #f59e0b;"></i>
+                    <span><strong>Terbukti Aktif:</strong> Beroperasi lancar mendukung omzet harian klien</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Digistack - CV Digital Karya Indonesia</span>
+            <div class="slide-footer-contact">
+                <span><i class="fa-brands fa-whatsapp"></i> 0823-7172-8447</span>
+                <span><i class="fa-solid fa-globe"></i> digistack.site</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 7: HARGA & INVESTASI (CUSTOM ONLY)
+         ========================================================================== -->
+    <section class="slide">
+        <div>
+            <div class="slide-header">
+                <div class="slide-brand">
+                    <img src="assets/digistack-logo.png" alt="Digistack" class="slide-brand-logo">
+                </div>
+                <span class="slide-category">Investasi Transparan</span>
+            </div>
+
+            <div class="slide-heading">
+                <h2>Paket Sistem Kustom — <span>Solusi Tepat Tanpa Biaya Tersembunyi</span></h2>
+                <p>Investasi cerdas sekali bayar untuk aset software yang menjadi hak milik Anda seutuhnya.</p>
+            </div>
+
+            <!-- HERO PRICING BOX -->
+            <div class="pricing-hero-container">
+                <div class="pricing-left">
+                    <div class="price-badge-exclusive"><i class="fa-solid fa-star"></i> PAKET CUSTOM TOTAL</div>
+                    <div class="price-big-title">Custom Business System</div>
+                    <div class="price-amount">
+                        <small>Mulai</small> Rp 2.999.000
+                    </div>
+                    <div class="price-subtitle">
+                        <i class="fa-solid fa-check-circle"></i> Sekali Bayar &middot; Tanpa Langganan Bulanan
+                    </div>
+                    <p style="font-size: 0.78rem; color: #64748b; margin-top: 8px; line-height: 1.4;">
+                        Biaya disesuaikan secara transparan berdasarkan jumlah modul dan alur operasional yang Anda butuhkan.
+                    </p>
+                </div>
+
+                <div class="pricing-right">
+                    <div style="font-size: 0.88rem; font-weight: 800; color: var(--secondary); margin-bottom: 10px;">
+                        Semua Fasilitas Unggulan Sudah Termasuk:
+                    </div>
+                    <div class="feature-grid-check">
+                        <div class="check-item"><i class="fa-solid fa-circle-check"></i> Alur Sistem Custom</div>
+                        <div class="check-item"><i class="fa-solid fa-circle-check"></i> Akses Tak Terbatas (Unlimited Device)</div>
+                        <div class="check-item"><i class="fa-solid fa-circle-check"></i> Desain UI/UX Modern & Ramah Staf</div>
+                        <div class="check-item"><i class="fa-solid fa-circle-check"></i> Gratis Domain & Server Hosting 1 Thn</div>
+                        <div class="check-item"><i class="fa-solid fa-circle-check"></i> Database Aman, Infrastruktur Milik Sendiri</div>
+                        <div class="check-item"><i class="fa-solid fa-circle-check"></i> Free Request Fitur Tambahan 3x</div>
+                        <div class="check-item"><i class="fa-solid fa-circle-check"></i> Training Karyawan & Dokumen SOP</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 GUARANTEES -->
+            <div class="pricing-guarantee-row">
+                <div class="guarantee-box">
+                    <i class="fa-solid fa-shield-halved" style="color: #10b981;"></i>
+                    <div>
+                        <strong>Garansi & Maintenance 1 TAHUN</strong>
+                        <span>Pendampingan teknis & perbaikan bug gratis selama 12 bulan penuh.</span>
+                    </div>
+                </div>
+
+                <div class="guarantee-box">
+                    <i class="fa-solid fa-file-invoice-dollar" style="color: #0284c7;"></i>
+                    <div>
+                        <strong>Kepastian Biaya (Fixed Cost)</strong>
+                        <span>Tidak ada tagihan mendadak per transaksi atau penambahan pengguna.</span>
+                    </div>
+                </div>
+
+                <div class="guarantee-box">
+                    <i class="fa-solid fa-headset" style="color: #f59e0b;"></i>
+                    <div>
+                        <strong>Dukungan Teknis Prioritas</strong>
+                        <span>Layanan bantuan responsif via remote desktop & konsultasi langsung.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Digistack - CV Digital Karya Indonesia</span>
+            <div class="slide-footer-contact">
+                <span><i class="fa-brands fa-whatsapp"></i> 0823-7172-8447</span>
+                <span><i class="fa-solid fa-globe"></i> digistack.site</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 8: LAYANAN & PAKET DIGITAL MARKETING
+         ========================================================================== -->
+    <section class="slide">
+        <div>
+            <div class="slide-header">
+                <div class="slide-brand">
+                    <img src="assets/digistack-logo.png" alt="Digistack" class="slide-brand-logo">
+                </div>
+                <span class="slide-category">Digital Marketing &amp; Growth</span>
+            </div>
+
+            <div class="slide-heading">
+                <h2>Paket Digital Marketing — <span>Akselerasi Omzet &amp; Branding Bisnis</span></h2>
+                <p>Kelola media sosial secara profesional, jangkau ribuan calon pembeli baru lewat iklan terarah, dan dominasi pencarian lokal Google.</p>
+            </div>
+
+            <!-- 3 EQUAL GRADIENT BUBBLES: ADS, BASIC, ENTERPRISE -->
+            <div class="mkt-grid-3">
+                <!-- Bubble 1: Google & Meta Ads (Gradasi Cyan / Emerald) -->
+                <div class="mkt-card card-ads">
+                    <div class="mkt-badge-top badge-cyan"><i class="fa-solid fa-bolt"></i> FAST TRAFFIC</div>
+                    <div class="mkt-header-box">
+                        <div class="mkt-title">Google &amp; Meta Ads</div>
+                        <div class="mkt-price">
+                            Rp 500.000 <small>/bln</small>
+                        </div>
+                        <div class="mkt-pill-wrapper">
+                            <div class="mkt-discount-pill">
+                                <i class="fa-solid fa-location-dot"></i> Termasuk Setup Google Bisnis
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="mkt-feature-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Iklan Tertarget Google Search, FB &amp; IG</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Riset Kata Kunci &amp; Audiens Siap Beli</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Copywriting Iklan Konversi Tinggi</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Pembuatan &amp; Verifikasi Google Bisnis</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Tracking Konversi &amp; Laporan ROAS Iklan</li>
+                    </ul>
+                </div>
+
+                <!-- Bubble 2: Basic (Gradasi Royal Blue / Sapphire) -->
+                <div class="mkt-card card-basic">
+                    <div class="mkt-badge-top badge-blue"><i class="fa-solid fa-fire"></i> KONTEN HARIAN</div>
+                    <div class="mkt-header-box">
+                        <div class="mkt-title">Basic</div>
+                        <div class="mkt-price">
+                            Rp 1.500.000 <small>/bln</small>
+                        </div>
+                        <div class="mkt-pill-wrapper">
+                            <div class="mkt-discount-pill">
+                                Paket 3 bln: Rp 4.000.000 (Hemat 500rb)
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="mkt-feature-list">
+                        <li><i class="fa-solid fa-circle-check"></i> 30 Konten Feed/Story IG (Upload Tiap Hari)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Copywriting &amp; Caption Menarik</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 5 Konten Video/bln (Reels &amp; TikTok)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Setup &amp; Monitoring Meta Ads (FB &amp; IG)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Monthly Report Performa Akun &amp; Konsultasi</li>
+                    </ul>
+                </div>
+
+                <!-- Bubble 3: Enterprise (Gradasi Midnight Navy & Gold) -->
+                <div class="mkt-card card-enterprise">
+                    <div class="mkt-badge-top"><i class="fa-solid fa-crown"></i> PALING LENGKAP</div>
+                    <div class="mkt-header-box">
+                        <div class="mkt-title">Enterprise</div>
+                        <div class="mkt-price">
+                            Rp 3.500.000 <small>/bln</small>
+                        </div>
+                        <div class="mkt-pill-wrapper">
+                            <div class="mkt-discount-pill">
+                                Paket 3 bln: Rp 9.000.000 (Hemat 1,5 Jt)
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="mkt-feature-list">
+                        <li><i class="fa-solid fa-circle-check"></i> 30 Konten Feed/Story IG (Upload Tiap Hari)</li>
+                        <li><i class="fa-solid fa-star"></i> 15 Konten Video/bln (Reels &amp; TikTok)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Copywriting &amp; Caption Menjual</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Manajemen Meta Ads (FB &amp; IG)</li>
+                        <li><i class="fa-solid fa-star"></i> Manajemen Google Ads Tertarget &amp; Analytics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- JASA WEB DESIGN BANNER (PORTFOLIO, COMPANY PROFILE, LANDING PAGE) -->
+            <div class="mkt-web-banner">
+                <div class="web-banner-left">
+                    <div class="web-banner-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="web-banner-info">
+                        <h4>Jasa Web Design &amp; Development <span class="badge-sekali-bayar"><span>SEKALI</span><span>BAYAR</span></span></h4>
+                        <p>Website profesional cepat, elegan, responsif mobile, fast-loading, SEO friendly, dan terintegrasi WhatsApp.</p>
+                    </div>
+                </div>
+                <div class="web-banner-pills">
+                    <div class="web-service-pill"><i class="fa-solid fa-circle-check"></i> Landing Page</div>
+                    <div class="web-service-pill"><i class="fa-solid fa-circle-check"></i> Company Profile</div>
+                    <div class="web-service-pill"><i class="fa-solid fa-circle-check"></i> Portofolio</div>
+                </div>
+                <div class="web-banner-price-box">
+                    <span class="lbl">Biaya Project</span>
+                    <span class="price">Start Rp 1.000.000</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Digistack - CV Digital Karya Indonesia</span>
+            <div class="slide-footer-contact">
+                <span><i class="fa-brands fa-whatsapp"></i> 0823-7172-8447</span>
+                <span><i class="fa-solid fa-globe"></i> digistack.site</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 9: CARA MEMULAI & KONTAK
+         ========================================================================== -->
+    <section class="slide">
+        <div>
+            <div class="slide-header">
+                <div class="slide-brand">
+                    <img src="assets/digistack-logo.png" alt="Digistack" class="slide-brand-logo">
+                </div>
+                <span class="slide-category">Langkah Mudah</span>
+            </div>
+
+            <div class="slide-heading">
+                <h2>4 Langkah Praktis <span>Membangun Sistem &amp; Marketing Bisnis</span> Anda</h2>
+                <p>Kami memandu proses transformasi digital dan akselerasi pemasaran usaha Anda dari konsultasi awal hingga siap menghasilkan omzet.</p>
+            </div>
+
+            <!-- 4 STEPS -->
+            <div class="step-container">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <div class="card-icon icon-blue"><i class="fa-solid fa-comments"></i></div>
+                    <h4>Konsultasi Gratis</h4>
+                    <p>Ceritakan alur usaha, kendala operasional, dan kebutuhan fitur sistem yang Anda inginkan.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <div class="card-icon icon-green"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h4>Rancangan & Demo</h4>
+                    <p>Tim Digistack merancang arsitektur sistem dan mendemokan simulasi alur fitur kepada Anda.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <div class="card-icon icon-gold"><i class="fa-solid fa-code"></i></div>
+                    <h4>Pengerjaan & Uji Coba</h4>
+                    <p>Sistem dibangun secara presisi. Dilakukan pengujian transaksi nyata sebelum serah terima final.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">04</div>
+                    <div class="card-icon icon-purple"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h4>Training &amp; Go-Live</h4>
+                    <p>Pelatihan staf operasional &amp; manajer, serah terima akun, dan sistem langsung aktif digunakan.</p>
+                </div>
+            </div>
+
+            <!-- CTA ACTION BOX -->
+            <div class="cta-action-box">
+                <div class="cta-action-left">
+                    <h3>Siap Mengotomatisasi &amp; Melipatgandakan Omzet Bisnis?</h3>
+                    <p style="margin-bottom: 8px;">Diskusikan alur usaha Anda sekarang. <strong>Konsultasi 100% Gratis.</strong></p>
+                    <div style="font-size: 0.78rem; color: #bae6fd; display: flex; align-items: center; gap: 14px; margin-top: 4px;">
+                        <span><i class="fa-solid fa-building" style="color: #38bdf8;"></i> <strong>CV Digital Karya Indonesia</strong></span>
+                        <span><i class="fa-solid fa-location-dot" style="color: #38bdf8;"></i> Jl Gadjah Magersari no 134, Magersari - Sidoarjo</span>
+                    </div>
+                </div>
+
+                <div class="cta-contacts-grid">
+                    <div class="contact-pill-card">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <span class="lbl">WhatsApp Resmi</span>
+                            <span class="val">0823-7172-8447</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-pill-card">
+                        <i class="fa-solid fa-globe"></i>
+                        <div>
+                            <span class="lbl">Website Portofolio</span>
+                            <span class="val">digistack.site</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>&copy; 2026 Digistack - CV Digital Karya Indonesia &bull; Jl Gadjah Magersari no 134, Sidoarjo</span>
+            <div class="slide-footer-contact">
+                <span><i class="fa-solid fa-envelope"></i> digistack.online@gmail.com</span>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
