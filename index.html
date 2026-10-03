@@ -1135,6 +1135,348 @@
         }
 
         /* ==========================================================================
+           DIGITAL MARKETING & GROWTH PACKAGES SECTION
+           ========================================================================== */
+        .mkt-web-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            align-items: stretch;
+        }
+
+        @media (max-width: 992px) {
+            .mkt-web-grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+        }
+
+        .mkt-web-card {
+            border-radius: 16px;
+            padding: 2.2rem 1.6rem 1.6rem 1.6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .mkt-web-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 1. Card Ads */
+        .mkt-web-card.card-ads {
+            background: linear-gradient(160deg, #ecfdf5 0%, #ffffff 42%, #e0f2fe 100%);
+            border: 2px solid #06b6d4;
+            box-shadow: 0 8px 24px rgba(6, 182, 212, 0.12);
+        }
+
+        /* 2. Card Basic */
+        .mkt-web-card.card-basic {
+            background: linear-gradient(160deg, #eff6ff 0%, #ffffff 42%, #e0e7ff 100%);
+            border: 2px solid #0284c7;
+            box-shadow: 0 8px 24px rgba(2, 132, 199, 0.12);
+        }
+
+        /* 3. Card Enterprise */
+        .mkt-web-card.card-enterprise {
+            background: linear-gradient(160deg, #0f172a 0%, #1e293b 55%, #0c4a6e 100%);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+            color: #ffffff;
+        }
+
+        .mkt-web-badge {
+            position: absolute;
+            top: -12px;
+            right: 18px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 99px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .mkt-web-badge.badge-cyan {
+            background: #06b6d4;
+            color: #ffffff;
+            box-shadow: 0 2px 10px rgba(6, 182, 212, 0.4);
+        }
+
+        .mkt-web-badge.badge-blue {
+            background: #0284c7;
+            color: #ffffff;
+            box-shadow: 0 2px 10px rgba(2, 132, 199, 0.4);
+        }
+
+        .mkt-web-badge.badge-gold {
+            background: #f59e0b;
+            color: #0f172a;
+            box-shadow: 0 2px 10px rgba(245, 158, 11, 0.4);
+        }
+
+        .mkt-web-header {
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-bottom: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .mkt-web-card.card-enterprise .mkt-web-header {
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+
+        .mkt-web-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .mkt-web-card.card-enterprise .mkt-web-title {
+            color: #ffffff;
+        }
+
+        .mkt-web-price {
+            font-size: 1.85rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .mkt-web-card.card-ads .mkt-web-price { color: #0891b2; }
+        .mkt-web-card.card-basic .mkt-web-price { color: #0284c7; }
+        .mkt-web-card.card-enterprise .mkt-web-price { color: #38bdf8; }
+
+        .mkt-web-price small {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        .mkt-web-card.card-enterprise .mkt-web-price small {
+            color: #94a3b8;
+        }
+
+        .mkt-web-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 8px;
+            line-height: 1.3;
+        }
+
+        .mkt-web-card.card-ads .mkt-web-pill {
+            background: #cffafe;
+            color: #0e7490;
+            border: 1px solid rgba(6, 182, 212, 0.35);
+        }
+
+        .mkt-web-card.card-basic .mkt-web-pill {
+            background: #dcfce7;
+            color: #15803d;
+            border: 1px solid rgba(22, 163, 74, 0.3);
+        }
+
+        .mkt-web-card.card-enterprise .mkt-web-pill {
+            background: rgba(245, 158, 11, 0.18);
+            color: #fcd34d;
+            border: 1px solid rgba(245, 158, 11, 0.35);
+        }
+
+        .mkt-web-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .mkt-web-features li {
+            font-size: 0.88rem;
+            color: #334155;
+            font-weight: 600;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.4;
+        }
+
+        .mkt-web-card.card-enterprise .mkt-web-features li {
+            color: #e2e8f0;
+        }
+
+        .mkt-web-card.card-ads .mkt-web-features li i.fa-circle-check { color: #0891b2; }
+        .mkt-web-card.card-basic .mkt-web-features li i.fa-circle-check { color: #0284c7; }
+        .mkt-web-card.card-enterprise .mkt-web-features li i.fa-circle-check { color: #10b981; }
+        .mkt-web-features li i.fa-star { color: #f59e0b; }
+
+        /* Banner Web Design */
+        .web-design-banner-container {
+            background: linear-gradient(135deg, #091322 0%, #0f172a 60%, #0369a1 100%);
+            border: 2px solid #38bdf8;
+            border-radius: 18px;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            box-shadow: 0 10px 30px rgba(3, 105, 161, 0.2);
+            color: #ffffff;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 992px) {
+            .web-design-banner-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.5rem;
+            }
+            .web-banner-pills-row {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
+        .web-banner-brand {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .web-banner-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #38bdf8;
+            flex-shrink: 0;
+        }
+
+        .web-banner-text h4 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0 0 0.35rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge-sekali-bayar-web {
+            background: #0284c7;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 99px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .web-banner-text p {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            margin: 0;
+            line-height: 1.5;
+            max-width: 480px;
+        }
+
+        .web-banner-pills-row {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .web-banner-pill-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .web-banner-pill-item i {
+            color: #38bdf8;
+            font-size: 0.78rem;
+        }
+
+        .web-banner-price-area {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 992px) {
+            .web-banner-price-area {
+                text-align: left;
+                width: 100%;
+                border-top: 1px dashed rgba(255, 255, 255, 0.2);
+                padding-top: 1rem;
+            }
+        }
+
+        .web-banner-price-area .lbl-project {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #94a3b8;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .web-banner-price-area .val-project {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #facc15;
+            display: block;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-banner-web {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0284c7;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.65rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-banner-web:hover {
+            background: #0369a1;
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
            BIAYA TAMBAHAN & MAINTENANCE LANJUTAN
            ========================================================================== */
         .fee-grid {
@@ -1538,7 +1880,7 @@
            bisa memaksa overflow horizontal di layar sempit ketika kontennya panjang). */
         .hero-container > *, .mockup-content-grid > *, .why-digistack-grid > *,
         .services-grid-ultra-compact > *, .flow-grid > *, .why-us-grid > *,
-        .pricing-grid > *, .fee-grid > *, .portfolio-grid > *, .cta-banner-moka > * {
+        .pricing-grid > *, .mkt-web-grid > *, .fee-grid > *, .portfolio-grid > *, .cta-banner-moka > * {
             min-width: 0;
         }
 
@@ -1649,6 +1991,10 @@
         @media (max-width: 580px) {
             .nav-cta-label { display: none; }
             .nav-cta { padding: 0.55rem 0.85rem !important; }
+            .section { padding: 3.5rem 1.25rem; }
+            .mkt-web-card { padding: 2.2rem 1.25rem 1.5rem; }
+            .mkt-web-badge { right: 12px; font-size: 0.68rem; padding: 3px 10px; }
+            .web-banner-brand { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
         }
 
         /* ==========================================================================
@@ -1808,6 +2154,7 @@
                 <li><a href="layanan.html">Layanan</a></li>
                 <li><a href="galeri.html">Portofolio</a></li>
                 <li><a href="#harga">Harga Paket</a></li>
+                <li><a href="#digital-marketing">Digital Marketing</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="compro.html">Tentang Kami</a></li>
 
@@ -2365,6 +2712,121 @@
                     <button type="button" onclick="openPaketModal('Custom')" class="btn-card btn-card-outline">Konsultasi Scope Custom</button>
                     <a href="https://wa.me/6282371728447" class="btn-card btn-card-demo js-wa-link" data-service="Live Demo Custom System"><i class="fa-solid fa-play"></i> Live Demo</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAKET DIGITAL MARKETING & WEB DESIGN SECTION
+         ========================================================================== -->
+    <section class="section" id="digital-marketing">
+        <div class="section-header">
+            <span class="section-subtitle">Growth &amp; Digital Marketing</span>
+            <h2 class="section-title">Paket Digital Marketing — Akselerasi Pertumbuhan &amp; Branding Bisnis</h2>
+            <p style="text-align: center; color: var(--text-muted); max-width: 720px; margin: 0.8rem auto 0; font-size: 1.05rem; line-height: 1.6;">
+                Kelola media sosial secara profesional, jangkau ribuan calon pembeli baru lewat iklan terarah, dan dominasi pencarian lokal Google.
+            </p>
+        </div>
+
+        <div class="mkt-web-grid">
+            <!-- Card 1: Google & Meta Ads -->
+            <div class="mkt-web-card card-ads">
+                <span class="mkt-web-badge badge-cyan"><i class="fa-solid fa-bolt"></i> FAST TRAFFIC</span>
+                <div>
+                    <div class="mkt-web-header">
+                        <div class="mkt-web-title">Google &amp; Meta Ads</div>
+                        <div class="mkt-web-price">Rp 500.000 <small>/bln</small></div>
+                        <div class="mkt-web-pill"><i class="fa-solid fa-location-dot"></i> Termasuk Setup Google Bisnis</div>
+                    </div>
+                    <ul class="mkt-web-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Iklan Tertarget Google Search, FB &amp; IG</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Riset Kata Kunci &amp; Audiens Siap Beli</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Copywriting Iklan Konversi Tinggi</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Pembuatan &amp; Verifikasi Google Bisnis</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Tracking Konversi &amp; Laporan ROAS Iklan</li>
+                    </ul>
+                </div>
+                <div class="pricing-footer-actions">
+                    <a href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20tertarik%20dengan%20Paket%20Google%20%26%20Meta%20Ads%20(Rp%20500rb/bln)" class="btn-card btn-card-primary js-wa-link" data-service="Paket Iklan Google & Meta Ads">
+                        <i class="fa-brands fa-whatsapp"></i> Pilih Paket Iklan
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Basic -->
+            <div class="mkt-web-card card-basic">
+                <span class="mkt-web-badge badge-blue"><i class="fa-solid fa-fire"></i> KONTEN HARIAN</span>
+                <div>
+                    <div class="mkt-web-header">
+                        <div class="mkt-web-title">Basic</div>
+                        <div class="mkt-web-price">Rp 1.500.000 <small>/bln</small></div>
+                        <div class="mkt-web-pill"><i class="fa-solid fa-tag"></i> Paket 3 bln: Rp 4.000.000 (Hemat 500rb)</div>
+                    </div>
+                    <ul class="mkt-web-features">
+                        <li><i class="fa-solid fa-circle-check"></i> 30 Konten Feed/Story IG (Upload Tiap Hari)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Copywriting &amp; Caption Menarik</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 5 Konten Video/bln (Reels &amp; TikTok)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Setup &amp; Monitoring Meta Ads (FB &amp; IG)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Monthly Report Performa Akun &amp; Konsultasi</li>
+                    </ul>
+                </div>
+                <div class="pricing-footer-actions">
+                    <a href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20tertarik%20dengan%20Paket%20Digital%20Marketing%20Basic%20(Rp%201.5jt/bln)" class="btn-card btn-card-primary js-wa-link" data-service="Paket Sosmed Basic">
+                        <i class="fa-brands fa-whatsapp"></i> Pilih Paket Basic
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: Enterprise -->
+            <div class="mkt-web-card card-enterprise">
+                <span class="mkt-web-badge badge-gold"><i class="fa-solid fa-crown"></i> PALING LENGKAP</span>
+                <div>
+                    <div class="mkt-web-header">
+                        <div class="mkt-web-title">Enterprise</div>
+                        <div class="mkt-web-price">Rp 3.500.000 <small>/bln</small></div>
+                        <div class="mkt-web-pill"><i class="fa-solid fa-gem"></i> Paket 3 bln: Rp 9.000.000 (Hemat 1,5 Jt)</div>
+                    </div>
+                    <ul class="mkt-web-features">
+                        <li><i class="fa-solid fa-circle-check"></i> 30 Konten Feed/Story IG (Upload Tiap Hari)</li>
+                        <li><i class="fa-solid fa-star"></i> 15 Konten Video/bln (Reels &amp; TikTok)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Copywriting &amp; Caption Menjual</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Manajemen Meta Ads (FB &amp; IG)</li>
+                        <li><i class="fa-solid fa-star"></i> Manajemen Google Ads Tertarget &amp; Analytics</li>
+                    </ul>
+                </div>
+                <div class="pricing-footer-actions">
+                    <a href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20tertarik%20dengan%20Paket%20Digital%20Marketing%20Enterprise%20(Rp%203.5jt/bln)" class="btn-card btn-card-primary js-wa-link" style="background:#f59e0b; color:#0f172a;" data-service="Paket Sosmed Enterprise">
+                        <i class="fa-brands fa-whatsapp"></i> Pilih Paket Enterprise
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- JASA WEB DESIGN & DEVELOPMENT BANNER -->
+        <div class="web-design-banner-container">
+            <div class="web-banner-brand">
+                <div class="web-banner-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+                <div class="web-banner-text">
+                    <h4>
+                        Jasa Web Design &amp; Development 
+                        <span class="badge-sekali-bayar-web">SEKALI BAYAR</span>
+                    </h4>
+                    <p>Website profesional cepat, elegan, responsif mobile, fast-loading, SEO friendly, dan terintegrasi WhatsApp.</p>
+                </div>
+            </div>
+
+            <div class="web-banner-pills-row">
+                <div class="web-banner-pill-item"><i class="fa-solid fa-circle-check"></i> Landing Page</div>
+                <div class="web-banner-pill-item"><i class="fa-solid fa-circle-check"></i> Company Profile</div>
+                <div class="web-banner-pill-item"><i class="fa-solid fa-circle-check"></i> Portofolio</div>
+            </div>
+
+            <div class="web-banner-price-area">
+                <span class="lbl-project">Biaya Project</span>
+                <span class="val-project">Start Rp 1.500.000</span>
+                <a href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20tertarik%20Jasa%20Pembuatan%20Website%20(Start%20Rp%201.5jt)" class="btn-banner-web js-wa-link" data-service="Jasa Web Design">
+                    <i class="fa-brands fa-whatsapp"></i> Konsultasi Website
+                </a>
             </div>
         </div>
     </section>
