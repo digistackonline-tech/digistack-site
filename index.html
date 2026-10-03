@@ -1066,6 +1066,28 @@
         .pricing-card:hover { box-shadow: var(--shadow); transform: translateY(-5px); }
         .pricing-card.popular { border: 2px solid var(--primary); box-shadow: var(--shadow); }
 
+        /* Custom Business System card (selaras pitch deck) */
+        .pricing-card.custom-system { border: 2px solid #f59e0b; background: linear-gradient(170deg, #fffbeb 0%, #ffffff 35%); }
+        .popular-badge.custom-badge { background: #f59e0b; color: #0f172a; }
+        .custom-quote {
+            margin: 1.2rem 0 0.8rem;
+            font-size: 1.35rem; font-weight: 800; line-height: 1.3;
+            color: var(--secondary);
+            background: linear-gradient(90deg, #fef3c7, #fff7ed);
+            border-left: 4px solid #f59e0b;
+            padding: 0.7rem 0.9rem; border-radius: 8px;
+        }
+        .custom-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin: 0.9rem 0 1rem; }
+        .custom-guarantees { display: flex; flex-direction: column; gap: 0.6rem; margin: 0.4rem 0 1.4rem; }
+        .custom-guarantees > div {
+            display: flex; gap: 0.7rem; align-items: flex-start;
+            background: #f8fafc; border: 1px solid var(--border-color);
+            border-radius: 10px; padding: 0.65rem 0.8rem;
+        }
+        .custom-guarantees i { font-size: 1.05rem; margin-top: 3px; }
+        .custom-guarantees span { font-size: 0.78rem; color: var(--text-muted); line-height: 1.45; }
+        .custom-guarantees strong { display: block; font-size: 0.85rem; color: var(--secondary); }
+
         .popular-badge {
             position: absolute;
             top: -15px;
@@ -2679,34 +2701,33 @@
                 </div>
             </div>
 
-            <!-- Price Card 3: Custom (DENGAN TAMBAHAN MODULAR FITUR LENGKAP) -->
-            <div class="pricing-card">
+            <!-- Price Card 3: Custom Business System (SELARAS PITCH DECK SLIDE 7) -->
+            <div class="pricing-card custom-system">
+                <span class="popular-badge custom-badge"><i class="fa-solid fa-star"></i> Paket Sistem Kustom</span>
                 <div>
                     <div class="pricing-header">
-                        <h3>Custom</h3>
-                        <p>Penyesuaian total tanpa batas sesuai kebutuhan spesifik usaha Anda.</p>
+                        <h3>Custom Business System</h3>
+                        <p>Sistem dibangun 100% mengikuti alur kerja &amp; skala bisnis Anda.</p>
                     </div>
-                    <div class="pricing-price">
-                        <span class="currency">Start</span>
-                        <span class="amount" style="font-size:2rem;">2.999.000</span>
-                        <span class="period">/sekali bayar</span>
-                    </div>
+                    <div class="custom-quote">Investasi Sesuai Skala &amp; Alur Usaha</div>
                     <div class="tax-inclusive-badge">
-                        <i class="fa-solid fa-circle-check"></i> Termasuk PPN & Biaya Instalasi
+                        <i class="fa-solid fa-circle-check"></i> Sekali Bayar &middot; Tanpa Biaya Langganan Bulanan
                     </div>
+                    <p class="custom-desc">Nilai investasi disusun transparan &amp; adil berdasarkan kompleksitas alur operasional, jumlah modul, dan skala cabang. Anda hanya berinvestasi pada fitur yang benar-benar berdampak bagi bisnis.</p>
                     <ul class="pricing-features">
-                        <li><i class="fa-solid fa-check"></i> Bebas Kustom Fitur</li>
-                        <li><i class="fa-solid fa-check"></i> Sistem Mengikuti Alur Kerja Bisnis Anda</li>
-                        <li><i class="fa-solid fa-check"></i> Modern UI/UX Design</li>
-                        <li><i class="fa-solid fa-check"></i> Landing Page & Company Profile</li>
-                        <li><i class="fa-solid fa-check"></i> Free Domain & Hosting (1 Tahun)</li>
-                        <li><i class="fa-solid fa-check"></i> Unlimited Akses Device</li>
-                        <li><i class="fa-solid fa-check"></i> Arsitektur Software Khusus Sesuai Scope</li>
-                        <li><i class="fa-solid fa-check"></i> Integrasi Database & API Pihak Ketiga</li>
-                        <li><i class="fa-solid fa-check"></i> Prioritas Penanganan Teknis & Support</li>
-                        <li><i class="fa-solid fa-check"></i> Free Maintenance 1 TAHUN</li>
-                        <li><i class="fa-solid fa-check"></i> Request Fitur Tambahan 3x Gratis</li>
+                        <li><i class="fa-solid fa-check"></i> Alur Sistem Custom</li>
+                        <li><i class="fa-solid fa-check"></i> Akses Tak Terbatas (Unlimited Device)</li>
+                        <li><i class="fa-solid fa-check"></i> Desain UI/UX Modern &amp; Ramah Staf</li>
+                        <li><i class="fa-solid fa-check"></i> Gratis Domain &amp; Server Hosting 1 Tahun</li>
+                        <li><i class="fa-solid fa-check"></i> Database Aman, Infrastruktur Milik Sendiri</li>
+                        <li><i class="fa-solid fa-check"></i> Free Request Fitur Tambahan 3x</li>
+                        <li><i class="fa-solid fa-check"></i> Training Karyawan &amp; Dokumen SOP</li>
                     </ul>
+                    <div class="custom-guarantees">
+                        <div><i class="fa-solid fa-shield-halved" style="color:#10b981;"></i><span><strong>Garansi &amp; Maintenance 1 Tahun</strong>Perbaikan bug gratis selama 12 bulan penuh.</span></div>
+                        <div><i class="fa-solid fa-file-invoice-dollar" style="color:#0284c7;"></i><span><strong>Kepastian Biaya (Fixed Cost)</strong>Tanpa tagihan per transaksi / tambahan pengguna.</span></div>
+                        <div><i class="fa-solid fa-headset" style="color:#f59e0b;"></i><span><strong>Dukungan Teknis Prioritas</strong>Bantuan responsif via remote &amp; konsultasi langsung.</span></div>
+                    </div>
                 </div>
                 <div class="pricing-footer-actions">
                     <button type="button" onclick="openPaketModal('Custom')" class="btn-card btn-card-outline">Konsultasi Scope Custom</button>
