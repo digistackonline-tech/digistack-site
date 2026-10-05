@@ -1,6 +1,3 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
-
-# Sitemap Index
 Sitemap: https://digistack.site/sitemap.xml
-
