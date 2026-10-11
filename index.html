@@ -236,14 +236,14 @@
         }
 
         .nav-container {
-            max-width: 1360px;
+            max-width: 1400px;
             width: 100%;
             margin: 0 auto;
-            padding: 0.8rem 1.5rem;
+            padding: 0.75rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1rem;
+            gap: 1.25rem;
             box-sizing: border-box;
         }
 
@@ -263,7 +263,7 @@
 
         .brand-title {
             font-weight: 800;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             color: #ffffff;
             letter-spacing: -0.5px;
             line-height: 1.1;
@@ -275,7 +275,7 @@
 
         .brand-tagline {
             font-weight: 700;
-            font-size: 0.55rem;
+            font-size: 0.52rem;
             color: #bae6fd;
             letter-spacing: 1.5px;
             margin-top: 3px;
@@ -283,7 +283,7 @@
 
         .nav-links {
             display: flex;
-            gap: clamp(0.55rem, 1.1vw, 1.15rem);
+            gap: clamp(0.55rem, 0.95vw, 1.15rem);
             align-items: center;
             list-style: none;
             margin: 0;
@@ -309,42 +309,94 @@
 
         .nav-links a {
             font-weight: 600;
-            font-size: clamp(0.82rem, 0.88vw, 0.9rem);
+            font-size: clamp(0.82rem, 0.86vw, 0.89rem);
             color: #f0f9ff;
             transition: var(--transition);
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.3rem;
-            padding: 0.5rem 0.15rem;
+            gap: 0.28rem;
+            padding: 0.45rem 0.2rem;
             white-space: nowrap;
+            line-height: 1.2;
         }
 
         .nav-links a:hover {
             color: #38bdf8;
         }
 
+        .nav-arrow {
+            font-size: 0.65rem;
+            opacity: 0.8;
+            transition: transform 0.25s ease;
+        }
+
+        .nav-links li:hover .nav-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* CLUSTER TOMBOL AKSI SEBELAH KANAN */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            flex-shrink: 0;
+        }
+
+        .btn-nav-demo {
+            background: #10b981;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 0.52rem 1.05rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);
+            transition: all 0.25s ease;
+            line-height: 1;
+        }
+
+        .btn-nav-demo:hover {
+            background: #059669;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
+        }
+
+        .btn-nav-demo i {
+            font-size: 0.72rem;
+        }
+
         .nav-cta {
-            padding: 0.6rem 1.25rem !important;
-            font-size: 0.88rem;
+            padding: 0.55rem 1.2rem !important;
+            font-size: 0.86rem;
             font-weight: 700;
             white-space: nowrap !important;
             flex-shrink: 0;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.45rem;
             border-radius: 50px;
             line-height: 1;
         }
 
         .nav-cta i {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1;
         }
 
         .nav-cta-label {
             white-space: nowrap;
             line-height: 1;
+        }
+
+        .mobile-nav-demo-item {
+            display: none;
         }
 
         /* STYLES DROPDOWN MENU ADDONS */
@@ -1906,7 +1958,7 @@
         }
 
         /* Responsive Breakpoints */
-        @media (max-width: 1150px) {
+        @media (max-width: 1200px) {
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -1919,6 +1971,25 @@
 
             /* MOBILE & TABLET NAV: HAMBURGER + COLLAPSIBLE PANEL */
             .nav-toggle { display: block; }
+            .btn-nav-demo { display: none; }
+            .mobile-nav-demo-item {
+                display: block;
+                padding: 0.8rem 1.5rem 0.4rem;
+            }
+            .mobile-nav-demo-btn {
+                background: #10b981 !important;
+                color: #ffffff !important;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 0.8rem 1.2rem !important;
+                border-radius: 10px;
+                font-weight: 700 !important;
+                box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+                text-align: center;
+                border-top: none !important;
+            }
             .nav-container { padding: 0.8rem 1.25rem; gap: 0.75rem; }
             .nav-cta { padding: 0.55rem 1.15rem !important; flex-shrink: 0; font-size: 0.86rem; }
             .brand-tagline { display: none; }
@@ -2171,17 +2242,10 @@
 </a>
 <ul class="nav-links">
 <li><a href="#kenapa">Keunggulan</a></li>
-<li><a href="layanan.html">Layanan</a></li>
-<li><a href="galeri.html">Portofolio</a></li>
-<li><a href="#kalkulator">Hitung Hemat</a></li>
-<li><a href="javascript:void(0)" onclick="openPosDemoModal('fnb')" class="nav-demo-pill"><i class="fa-solid fa-play"></i> Demo Kasir</a></li>
-<li><a href="#harga">Harga Paket</a></li>
-<li><a href="#digital-marketing">Digital Marketing</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="compro.html">Tentang Kami</a></li>
-<!-- MENU DROPDOWN BISNIS -->
+
+<!-- MENU DROPDOWN SOLUSI BISNIS -->
 <li>
-<a href="#bisnis">Solusi Bisnis <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+<a href="#bisnis">Solusi Bisnis <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
 <ul class="dropdown-menu">
 <li><a class="js-wa-link" data-service="Cafe &amp; Coffee Shop" href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20untuk%20bisnis%20Cafe"><i class="fa-solid fa-mug-hot"></i> Cafe &amp; Coffee Shop</a></li>
 <li><a class="js-wa-link" data-service="Restoran &amp; F&amp;B" href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20untuk%20bisnis%20Resto"><i class="fa-solid fa-utensils"></i> Resto &amp; Kuliner</a></li>
@@ -2195,22 +2259,41 @@
 <li><a class="js-wa-link" data-service="Sistem Kustom Lainnya" href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20tertarik%20solusi%20sistem%20Custom%20lainnya"><i class="fa-solid fa-ellipsis"></i> Custom Software Khusus</a></li>
 </ul>
 </li>
-<!-- MENU DROPDOWN ADDONS -->
+
+<!-- MENU DROPDOWN LAYANAN & ADDONS -->
 <li>
-<a href="#addons">Hardware &amp; Addons <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+<a href="layanan.html">Layanan <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
 <ul class="dropdown-menu">
-<li><a class="js-wa-link" data-service="PC Komputer Kasir" href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20PC%20Kasir"><i class="fa-solid fa-desktop"></i> PC / Komputer Kasir</a></li>
-<li><a class="js-wa-link" data-service="Tablet POS" href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20Tablet%20POS"><i class="fa-solid fa-tablet-screen-button"></i> Tablet POS</a></li>
-<li><a class="js-wa-link" data-service="Printer Thermal" href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20Printer%20Thermal"><i class="fa-solid fa-print"></i> Printer Thermal</a></li>
-<li><a class="js-wa-link" data-service="Cash Drawer" href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20Cash%20Drawer"><i class="fa-solid fa-box-archive"></i> Cash Drawer (Laci Kasir)</a></li>
-<li><a class="js-wa-link" data-service="UPS Backup" href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20UPS"><i class="fa-solid fa-plug-circle-bolt"></i> UPS (Power Backup)</a></li>
-<li><a class="js-wa-link" data-service="Scanner Barcode" href="https://wa.me/6282371728447?text=Halo%20Digistack,%20saya%20butuh%20info%20Addon%20Barcode%20Scanner"><i class="fa-solid fa-barcode"></i> Scanner Barang</a></li>
+<li><a href="layanan.html"><i class="fa-solid fa-layer-group"></i> Ekosistem &amp; Fitur POS</a></li>
+<li><a href="#digital-marketing"><i class="fa-solid fa-bullhorn"></i> Paket Digital Marketing</a></li>
+<li><a href="#addons"><i class="fa-solid fa-desktop"></i> Hardware &amp; Addons Kasir</a></li>
 </ul>
 </li>
+
+<li><a href="#kalkulator">Hitung Hemat</a></li>
+<li><a href="#harga">Harga Paket</a></li>
+<li><a href="galeri.html">Portofolio</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="compro.html">Tentang Kami</a></li>
+
+<!-- KHUSUS DRAWER MOBILE: TOMBOL DEMO KASIR -->
+<li class="mobile-nav-demo-item">
+<a href="javascript:void(0)" onclick="openPosDemoModal('fnb')" class="mobile-nav-demo-btn">
+<i class="fa-solid fa-play"></i> Coba Demo Kasir Interaktif
+</a>
+</li>
 </ul>
+
+<!-- ACTIONS BUTTONS (KANAN) -->
+<div class="nav-actions">
+<button type="button" class="btn-nav-demo" onclick="openPosDemoModal('fnb')" title="Buka Simulator POS Interaktif">
+<i class="fa-solid fa-play"></i> Demo Kasir
+</button>
 <a class="btn-cyan nav-cta js-wa-link" data-service="Konsultasi Langsung" href="https://wa.me/6282371728447">
 <i class="fa-brands fa-whatsapp"></i> <span class="nav-cta-label">Diskusi Sistem</span>
 </a>
+</div>
+
 <!-- HAMBURGER TOGGLE (MOBILE) -->
 <button aria-expanded="false" aria-label="Buka menu navigasi" class="nav-toggle" id="navToggle">
 <i class="fa-solid fa-bars"></i>
@@ -3026,7 +3109,7 @@
 </div>
 </section>
 <!-- CALL TO ACTION (CTA) -->
-<div class="cta-banner-wrapper">
+<div class="cta-banner-wrapper" id="addons">
 <div class="cta-banner-moka">
 <div class="cta-content">
 <h2 class="cta-title">Cari tahu bagaimana Digistack bisa membantu usaha Anda</h2>
@@ -3132,7 +3215,7 @@
 
             if (submenu) {
                 topLink.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 1150) {
+                    if (window.innerWidth <= 1200) {
                         e.preventDefault();
                         item.classList.toggle('dropdown-open');
                     }
