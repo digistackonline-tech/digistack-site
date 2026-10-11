@@ -1,0 +1,867 @@
+/* ==========================================================================
+   DIGISTACK INTERACTIVE POS SIMULATOR & ROI CALCULATOR STYLES
+   ========================================================================== */
+
+/* Hero Action Enhanced Buttons */
+.hero-action-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-hero-demo {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff !important;
+    padding: 0.95rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.98rem;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hero-demo::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transform: rotate(30deg);
+    animation: shineDemo 3.5s infinite;
+}
+
+@keyframes shineDemo {
+    0% { transform: translateX(-100%) rotate(30deg); }
+    30%, 100% { transform: translateX(100%) rotate(30deg); }
+}
+
+.btn-hero-demo:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.6);
+}
+
+.hero-trust-badges {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    color: #bae6fd;
+}
+
+.hero-trust-badge-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.hero-trust-badge-item i {
+    color: #34d399;
+}
+
+/* Nav Demo Pill */
+.nav-demo-pill {
+    background: #10b981 !important;
+    color: #ffffff !important;
+    padding: 0.45rem 1rem !important;
+    border-radius: 50px !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+    transition: all 0.25s ease !important;
+}
+
+.nav-demo-pill:hover {
+    background: #059669 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.5);
+}
+
+/* ==========================================================================
+   KALKULATOR PENGHEMATAN BIAYA (ROI CALCULATOR)
+   ========================================================================== */
+.calc-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.calc-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.calc-card-wrapper {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15);
+    border: 1px solid #cbd5e1;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    margin-top: 2.5rem;
+}
+
+@media (max-width: 960px) {
+    .calc-card-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.calc-inputs {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.calc-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.calc-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.calc-val-pill {
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 800;
+    border: 1px solid #bae6fd;
+}
+
+.calc-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 6px;
+    background: #e2e8f0;
+    outline: none;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.calc-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #0284c7;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.5);
+    border: 2px solid #ffffff;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.calc-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    background: #0369a1;
+}
+
+.calc-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #0284c7;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.5);
+    border: 2px solid #ffffff;
+}
+
+.calc-slider-hints {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* Calculator Result Side */
+.calc-results {
+    background: linear-gradient(145deg, #0f172a 0%, #1e293b 60%, #0369a1 100%);
+    color: #ffffff;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.8rem;
+    position: relative;
+}
+
+.calc-results::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.calc-res-header {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.calc-res-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0.8rem 0;
+}
+
+.calc-breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.92rem;
+}
+
+.calc-breakdown-row span {
+    color: #cbd5e1;
+}
+
+.calc-breakdown-row strong {
+    font-weight: 800;
+}
+
+.calc-savings-box {
+    background: rgba(16, 185, 129, 0.12);
+    border: 1.5px solid #10b981;
+    border-radius: 16px;
+    padding: 1.4rem;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(8px);
+}
+
+.calc-savings-label {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #34d399;
+}
+
+.calc-savings-amount {
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: #facc15;
+    letter-spacing: -1px;
+    margin: 0.3rem 0;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+.calc-savings-sub {
+    font-size: 0.78rem;
+    color: #e2e8f0;
+    line-height: 1.4;
+}
+
+.calc-cta-btn {
+    background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 0.9rem 1.4rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4);
+    transition: all 0.3s ease;
+}
+
+.calc-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(250, 204, 21, 0.6);
+    background: #fde047;
+}
+
+/* ==========================================================================
+   INTERACTIVE POS SIMULATOR MODAL
+   ========================================================================== */
+.pos-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: fadeIn 0.25s ease;
+}
+
+.pos-modal-overlay.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.pos-simulator-window {
+    background: #0f172a;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 1140px;
+    height: 90vh;
+    max-height: 780px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    position: relative;
+    animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* POS Window Header */
+.pos-win-header {
+    background: #1e293b;
+    padding: 0.85rem 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.pos-win-title-area {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.pos-win-badge {
+    background: #0284c7;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pos-mode-switch {
+    display: flex;
+    background: #0f172a;
+    padding: 3px;
+    border-radius: 10px;
+    gap: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pos-mode-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.pos-mode-btn.active {
+    background: #0284c7;
+    color: #ffffff;
+}
+
+.pos-close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.pos-close-btn:hover {
+    background: #ef4444;
+}
+
+/* POS Body (Split: Products Grid vs Cart Summary) */
+.pos-win-body {
+    display: grid;
+    grid-template-columns: 1fr 370px;
+    flex-grow: 1;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+@media (max-width: 860px) {
+    .pos-win-body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 280px;
+    }
+}
+
+/* Products Left Column */
+.pos-products-col {
+    padding: 1.25rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+}
+
+.pos-category-bar {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.pos-cat-pill {
+    background: #e2e8f0;
+    color: #475569;
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.pos-cat-pill.active {
+    background: #0284c7;
+    color: #ffffff;
+}
+
+.pos-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.85rem;
+    overflow-y: auto;
+}
+
+.pos-item-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.pos-item-card:hover {
+    border-color: #0284c7;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(2, 132, 199, 0.15);
+}
+
+.pos-item-card:active {
+    transform: scale(0.97);
+}
+
+.pos-item-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: white;
+}
+
+.pos-item-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.3;
+    margin-bottom: 0.35rem;
+}
+
+.pos-item-price {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #0284c7;
+}
+
+/* Right Cart Column */
+.pos-cart-col {
+    background: #ffffff;
+    border-left: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.pos-cart-header {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pos-cart-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pos-cart-clear {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pos-cart-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.pos-empty-cart {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #94a3b8;
+    font-size: 0.88rem;
+}
+
+.pos-empty-cart i {
+    font-size: 2.2rem;
+    margin-bottom: 0.6rem;
+    color: #cbd5e1;
+    display: block;
+}
+
+.pos-cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed #e2e8f0;
+    font-size: 0.85rem;
+}
+
+.pos-cart-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pos-cart-item-name {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.pos-cart-item-price {
+    font-size: 0.78rem;
+    color: #64748b;
+}
+
+.pos-qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pos-qty-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.pos-qty-btn:hover {
+    background: #0284c7;
+    color: white;
+    border-color: #0284c7;
+}
+
+.pos-qty-val {
+    font-weight: 700;
+    min-width: 16px;
+    text-align: center;
+}
+
+/* Cart Footer Totals & Checkout Button */
+.pos-cart-footer {
+    padding: 1.1rem 1.2rem;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.pos-total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.pos-grand-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #0f172a;
+    padding-top: 0.4rem;
+    border-top: 1px solid #cbd5e1;
+}
+
+.pos-pay-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    transition: all 0.2s ease;
+}
+
+.pos-pay-btn:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.pos-pay-btn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+}
+
+/* ==========================================================================
+   RECEIPT & PAYMENT SUCCESS OVERLAY
+   ========================================================================== */
+.pos-receipt-modal {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    z-index: 10;
+}
+
+.pos-receipt-modal.active {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+}
+
+.pos-receipt-paper {
+    background: #ffffff;
+    width: 100%;
+    max-width: 360px;
+    border-radius: 12px;
+    padding: 1.8rem 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    font-family: 'Courier New', Courier, monospace;
+    color: #1e293b;
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.pos-receipt-header {
+    text-align: center;
+    border-bottom: 1px dashed #94a3b8;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.pos-receipt-logo {
+    font-weight: 900;
+    font-size: 1.15rem;
+    letter-spacing: -0.5px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #0284c7;
+}
+
+.pos-receipt-meta {
+    font-size: 0.72rem;
+    color: #64748b;
+    margin-top: 3px;
+    line-height: 1.4;
+}
+
+.pos-receipt-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    border-bottom: 1px dashed #94a3b8;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.pos-receipt-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pos-receipt-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+}
+
+.pos-receipt-paid-badge {
+    text-align: center;
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #86efac;
+    padding: 0.35rem;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 0.82rem;
+    margin-bottom: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* High-Converting CTA Box Under Receipt */
+.pos-receipt-conversion-box {
+    background: #f0f9ff;
+    border: 1.5px solid #0284c7;
+    border-radius: 10px;
+    padding: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.pos-receipt-conversion-box p {
+    font-size: 0.78rem;
+    color: #0369a1;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+}
+
+.pos-receipt-wa-btn {
+    background: #25d366;
+    color: white;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.35);
+    transition: all 0.2s ease;
+}
+
+.pos-receipt-wa-btn:hover {
+    background: #1eb956;
+    transform: translateY(-1px);
+}
+
+.pos-receipt-reset-btn {
+    background: none;
+    border: 1px solid #cbd5e1;
+    color: #64748b;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.45rem;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 0.6rem;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
