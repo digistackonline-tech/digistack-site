@@ -532,11 +532,11 @@
             font-size: 0.72rem;
         }
 
-        /* CLIENT LOGO SHOWCASE SLIDE (PORTRAIT: 3 ROW 1 + 2 CENTERED ROW 2) */
+        /* CLIENT LOGO SHOWCASE SLIDE (PORTRAIT: 2x2 GRID) */
         .client-grid-portrait {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 14px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
             margin-top: 14px;
         }
 
@@ -551,20 +551,6 @@
             justify-content: center;
             text-align: center;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-        }
-
-        .client-grid-portrait .client-logo-card:nth-child(1),
-        .client-grid-portrait .client-logo-card:nth-child(2),
-        .client-grid-portrait .client-logo-card:nth-child(3) {
-            grid-column: span 2;
-        }
-
-        .client-grid-portrait .client-logo-card:nth-child(4) {
-            grid-column: 2 / span 2;
-        }
-
-        .client-grid-portrait .client-logo-card:nth-child(5) {
-            grid-column: 4 / span 2;
         }
 
         .client-grid-portrait .client-logo-wrapper {
@@ -1544,15 +1530,8 @@
                 <p>Digistack dipercaya oleh bisnis berkembang di berbagai sektor untuk membangun sistem operasional kustom yang efisien dan andal.</p>
             </div>
 
-            <!-- 5 CLIENT LOGO CARDS -->
+            <!-- 4 CLIENT LOGO CARDS -->
             <div class="client-grid-portrait">
-                <!-- 1: Belia Cosmetics -->
-                <div class="client-logo-card">
-                    <div class="client-logo-wrapper">
-                        <img src="assets/clients/belia-cosmetics.jpg" alt="Belia Cosmetics">
-                    </div>
-                    <div class="client-name">Belia Cosmetics</div>
-                </div>
 
                 <!-- 2: Metaplus Perkasa -->
                 <div class="client-logo-card">
